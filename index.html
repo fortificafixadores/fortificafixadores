@@ -1,0 +1,2332 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fortifica Fixadores - Soluções em Fixadores Estruturais ASTM</title>
+    <meta name="description" content="Fornecedor especializado em parafusos ASTM A325, A307, barras roscadas B7, porcas 2H, A563 e arruelas F436 para estruturas metálicas. Qualidade e conformidade.">
+    <meta name="keywords" content="parafuso A325, parafuso A307, parafuso inox, barra roscada, porca 2H, porca A563, porca inox, arruela F436, fixadores estruturais, ASTM, Fortifica Fixadores">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" xintegrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- html2pdf.js for PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" xintegrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBOHNvKwRZcxRdFaMflNBecAfnZx6pqTT9SBCAlsBb2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        /* Base styles using Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E5E7EB; /* Fundo Cinza Claro */
+            color: #343a40;
+        }
+
+        /* NEW Professional Color Palette */
+        :root {
+            --color-primary-action: #2A64A7; /* A strong, corporate blue */
+            --color-primary-action-hover: #1E4A7D; /* A darker shade for hover */
+            
+            --color-secondary-action: #374151; /* A professional charcoal gray */
+            --color-secondary-action-hover: #1f2937; /* Darker charcoal for hover */
+
+            --color-highlight: #F59E0B; /* A warm, professional amber/gold for accents */
+
+            --color-text-dark: #111827; /* Near-black for headings and important text */
+            --color-text-body: #374151; /* Charcoal for body text */
+            --color-text-muted: #6b7280; /* Lighter gray for secondary text */
+
+            --color-background-light: #E5E7EB; /* Fundo Cinza Claro para seções */
+            --color-white: #FFFFFF;
+            --color-border: #E5E7EB; /* Light border color */
+            
+            /* Accent colors for cards */
+            --accent-1: #3B82F6; /* Blue */
+            --accent-2: #10B981; /* Green */
+            --accent-3: #F97316; /* Orange */
+            --accent-4: #6366F1; /* Indigo */
+        }
+
+        /* Headings using Poppins font for a modern, strong touch */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--color-text-dark);
+        }
+        
+        body {
+            color: var(--color-text-body);
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #A7A9AC; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #888; }
+
+        /* Product card image styling */
+        .product-card-image {
+            width: 100%;
+            height: 180px; /* Slightly reduced height */
+            object-fit: contain;
+            background-color: var(--color-white);
+            padding: 0.5rem;
+        }
+        
+        .product-card {
+            border-top: 4px solid;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        /* Category Card Styling */
+        .category-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--color-primary-action);
+            overflow: hidden; /* Garante que a imagem não saia do card no zoom */
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        /* ALTERADO: Estilos para a imagem da categoria em vez do ícone */
+        .category-image-container {
+            height: 160px;
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            border-radius: 0.375rem;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem; /* Adicionado padding para evitar que toque nas bordas */
+        }
+        .category-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* ALTERADO: de cover para contain para mostrar a imagem inteira */
+            transition: transform 0.5s ease;
+        }
+        .category-card:hover .category-image {
+            transform: scale(1.1); /* Efeito de zoom suave ao passar o mouse */
+        }
+
+
+        /* Carousel specific styles */
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            height: 60vh;
+            min-height: 400px;
+            max-height: 600px;
+            overflow: hidden;
+        }
+        .carousel-slide {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        .carousel-slide::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
+            z-index: 1;
+        }
+        .carousel-caption {
+            color: var(--color-white);
+            padding: 2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            z-index: 5;
+            max-width: 90%;
+            text-align: center;
+        }
+        .carousel-slide.active .carousel-caption {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: 0.4s;
+        }
+        .carousel-caption h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            color: var(--color-white);
+        }
+        .carousel-caption p {
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            font-weight: 400;
+        }
+
+        /* Carousel navigation buttons */
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+            z-index: 10;
+        }
+        .carousel-nav button {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: var(--color-white);
+            border: none;
+            width: 3rem; height: 3rem;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .carousel-nav button:hover {
+            background-color: rgba(0, 0, 0, 0.6);
+            transform: scale(1.1);
+        }
+
+        /* Carousel dots */
+        .carousel-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            z-index: 10;
+        }
+        .carousel-dot {
+            width: 12px; height: 12px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            margin: 0 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .carousel-dot.active {
+            background-color: var(--color-white);
+            transform: scale(1.2);
+        }
+
+        /* Header logo */
+        .header-logo {
+            height: 50px;
+            width: auto;
+        }
+        
+        /* Glassmorphism Header */
+        header.glass {
+            background-color: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        header.glass .nav-link {
+            color: var(--color-text-body);
+            font-weight: 600;
+        }
+        header.glass .nav-link:hover {
+            color: var(--color-primary-action);
+        }
+        header.glass .quotation-cart-btn {
+             color: var(--color-text-body);
+        }
+        header.glass .quotation-cart-btn:hover {
+             color: var(--color-primary-action);
+        }
+
+
+        /* Modal styles */
+        .modal {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .modal-content {
+            background-color: var(--color-white);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.95);
+            opacity: 0;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .modal.active .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+        .product-config-modal-content {
+            max-width: 700px;
+        }
+        .modal-close-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            font-size: 2rem;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            line-height: 1;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .modal-close-btn:hover {
+            color: var(--color-text-dark);
+            transform: rotate(90deg);
+        }
+
+        /* Quotation cart badge */
+        .quotation-cart-btn {
+            position: relative;
+        }
+        .quotation-item-count {
+            position: absolute;
+            top: -8px; right: -8px;
+            background-color: #EF4444; /* Red */
+            color: var(--color-white);
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            line-height: 1;
+        }
+
+        /* Suggestion container for inputs */
+        .suggestions-container {
+            position: absolute;
+            background-color: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 0.375rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-height: 200px; /* Increased height */
+            overflow-y: auto;
+            z-index: 900; /* FIXED: Lower z-index to stay behind modal (1000) */
+            width: 100%;
+            left: 0;
+            top: calc(100% + 4px);
+        }
+        .suggestion-item {
+            padding: 0.75rem;
+            cursor: pointer;
+            color: var(--color-text-body);
+            border-bottom: 1px solid var(--color-border);
+        }
+        .suggestion-item:last-child {
+            border-bottom: none;
+        }
+        .suggestion-item:hover {
+            background-color: var(--color-background-light);
+        }
+
+        /* WhatsApp button animation */
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .whatsapp-float-btn {
+            animation: pulse 2s infinite;
+        }
+        .whatsapp-float-btn:hover {
+            animation: none;
+            transform: scale(1.1);
+        }
+
+        /* Scroll Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.6, 0.2, 0.1, 1), transform 0.8s cubic-bezier(0.6, 0.2, 0.1, 1);
+        }
+        .fade-in-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Button Click Animation */
+        .btn-click-effect:active {
+            transform: scale(0.97);
+            transition: transform 0.1s ease;
+        }
+        
+        /* PDF Preview Styles */
+        .pvo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pvo-logo {
+            height: 60px;
+            width: auto;
+        }
+        .pvo-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-text-dark);
+        }
+        
+        /* IMPROVEMENT: Button hover styles using classes */
+        .btn-secondary-outline:hover {
+            background-color: var(--color-secondary-action);
+            color: var(--color-white);
+        }
+
+        /* PDF Styles specific */
+        .pdf-footer-line {
+            border-bottom: 1px solid #ccc;
+            height: 1.5rem;
+            width: 100%;
+            display: inline-block;
+        }
+
+        /* CORREÇÃO: Ajuste de quebra de página para tabelas no PDF */
+        /* Permite que a tabela quebre entre páginas */
+        table {
+            page-break-inside: auto;
+        }
+        /* Evita que uma linha específica da tabela seja cortada ao meio, mas permite quebras entre linhas */
+        tr {
+            page-break-inside: avoid;
+            page-break-after: auto;
+        }
+        /* Garante que o cabeçalho da tabela se repita ou pelo menos não quebre de forma estranha (opcional, dependendo do renderizador) */
+        thead {
+            display: table-header-group;
+        }
+        /* Rodapé da tabela se houver */
+        tfoot {
+            display: table-footer-group;
+        }
+
+    </style>
+</head>
+<body class="text-dark">
+
+    <!-- Header -->
+    <header class="glass shadow-md fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#inicio-carousel" id="logo-link" class="flex items-center">
+                <!-- LOGO LOCAL ATUALIZADA -->
+                <img src="imagens/logo.png" alt="Fortifica Fixadores Logo" class="header-logo" onerror="this.src='https://placehold.co/200x50/FFFFFF/A7A9AC?text=Logo'; this.onerror=null;">
+            </a>
+            <nav class="hidden md:flex space-x-2 items-center">
+                <a href="#inicio-carousel" class="nav-link px-4 py-2 rounded-md text-base transition-colors">Início</a>
+                <a href="#produtos" class="nav-link px-4 py-2 rounded-md text-base transition-colors">Produtos</a>
+                <a href="#sobre-nos-section" class="nav-link px-4 py-2 rounded-md text-base transition-colors">Sobre Nós</a>
+                <a href="#contato" class="nav-link px-4 py-2 rounded-md text-base transition-colors">Contato</a>
+                <a href="https://www.instagram.com/fortificafixadores" target="_blank" class="text-gray-500 hover:text-primary-action px-3 py-2 rounded-md text-xl transition-colors" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <button id="quotation-cart-button" class="quotation-cart-btn px-3 py-2 rounded-md text-xl transition-colors" aria-label="Ver carrinho de cotação">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span id="quotation-item-count" class="quotation-item-count hidden">0</span>
+                </button>
+            </nav>
+            <div class="md:hidden flex items-center">
+                <button id="quotation-cart-button-mobile" class="quotation-cart-btn text-gray-700 hover:text-primary-action px-3 py-2 rounded-md text-xl transition-colors relative mr-2" aria-label="Ver carrinho de cotação">
+                    <i class="fas fa-clipboard-list"></i>
+                    <span id="quotation-item-count-mobile" class="quotation-item-count hidden">0</span>
+                </button>
+                <button id="mobile-menu-button" class="text-gray-700 focus:outline-none" aria-label="Toggle mobile menu">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white/90 backdrop-blur-sm">
+            <a href="#inicio-carousel" class="block nav-link text-gray-700 hover:text-primary-action px-4 py-3 text-base transition-colors">Início</a>
+            <a href="#produtos" class="block nav-link text-gray-700 hover:text-primary-action px-4 py-3 text-base transition-colors">Produtos</a>
+            <a href="#sobre-nos-section" class="block nav-link text-gray-700 hover:text-primary-action px-4 py-3 text-base transition-colors">Sobre Nós</a>
+            <a href="#contato" class="block nav-link text-gray-700 hover:text-primary-action px-4 py-3 text-base transition-colors">Contato</a>
+            <a href="https://www.instagram.com/fortificafixadores" target="_blank" class="block text-gray-700 hover:text-primary-action px-4 py-3 text-base transition-colors"><i class="fab fa-instagram mr-2"></i>Instagram</a>
+        </div>
+    </header>
+
+    <main class="pt-[74px]">
+        
+        <div id="main-content-container">
+            <section id="inicio-carousel" class="page-section carousel-container">
+                <!-- BANNER 1 - AGORA LOCAL -->
+                <div class="carousel-slide active" style="background-image: url('imagens/banner-home-1.jpg');">
+                    <div class="carousel-caption">
+                        <h2 class="fade-in-up">SOLUÇÕES EM FIXADORES</h2>
+                        <p class="fade-in-up" style="transition-delay: 0.2s;">Qualidade e Resistência para seu Projeto</p>
+                        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4 fade-in-up" style="transition-delay: 0.4s;">
+                            <a href="#produtos" class="nav-link btn-click-effect text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105" style="background-color: var(--color-primary-action);">Ver Produtos</a>
+                            <a href="#contato" class="nav-link btn-click-effect text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105" style="background-color: var(--color-secondary-action);">Falar Conosco</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- BANNER 2 - AGORA LOCAL -->
+                <div class="carousel-slide" style="background-image: url('imagens/banner-home-2.jpg');">
+                    <div class="carousel-caption">
+                        <h2 class="fade-in-up">Conheça Nossas Linhas</h2>
+                        <p class="fade-in-up" style="transition-delay: 0.2s;">Solicite seu orçamento de forma rápida e fácil</p>
+                        <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4 fade-in-up" style="transition-delay: 0.4s;">
+                            <button id="carousel-cotacao-btn" class="btn-click-effect text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105" style="background-color: var(--color-primary-action);">FAZER COTAÇÃO</button>
+                            <a href="#sobre-nos-section" class="nav-link btn-click-effect text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105" style="background-color: var(--color-secondary-action);">SOBRE NÓS</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button id="prevBtn" aria-label="Previous slide"><i class="fas fa-chevron-left"></i></button>
+                    <button id="nextBtn" aria-label="Next slide"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="carousel-dots"></div>
+            </section>
+
+            <section id="produtos" class="page-section py-16 lg:py-24" style="background-color: var(--color-background-light);">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12 fade-in-up">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Nossa Linha de Fixadores</h2>
+                        <div class="w-24 h-1 mx-auto mb-6" style="background-color: var(--color-highlight);"></div>
+                        <p class="text-lg text-text-muted max-w-3xl mx-auto">
+                            Trabalhamos com uma linha técnica completa de parafusos, porcas, arruelas e barras roscadas com <strong>acabamentos específicos para cada ambiente</strong>.
+                        </p>
+                    </div>
+                    
+                    <!-- NOVO: Container de Categorias -->
+                    <div id="categories-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                        <!-- Categories will be injected here via JS -->
+                    </div>
+
+                    <!-- ALTERADO: Container da lista de produtos agora começa oculto e tem um botão de voltar -->
+                    <div id="products-list-container" class="hidden">
+                        <div class="mb-6 flex items-center">
+                            <button id="back-to-categories-btn" class="flex items-center text-primary-action font-semibold hover:underline">
+                                <i class="fas fa-arrow-left mr-2"></i> Voltar para Categorias
+                            </button>
+                            <h3 id="current-category-title" class="ml-4 text-2xl font-bold text-gray-800"></h3>
+                        </div>
+                        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <!-- Product cards will be injected here by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sobre-nos-section" class="page-section py-16 lg:py-24 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12 fade-in-up">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Sobre a Fortifica Fixadores</h2>
+                        <div class="w-24 h-1 mx-auto mb-6" style="background-color: var(--color-highlight);"></div>
+                        <div class="text-text-body text-lg leading-relaxed space-y-6 max-w-3xl mx-auto">
+                            <p>A <strong>Fortifica Fixadores</strong> nasceu para suprir com excelência a demanda por fixadores de alta resistência no setor da construção metálica, industrial e de infraestrutura pesada.</p>
+                            <p>Com um atendimento técnico e objetivo, trabalhamos com normas rigorosas e entregamos os produtos idealizados para obras que exigem planejamento mecânico, rastreabilidade e conformidade.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                        <div class="p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in-up" style="background-color: var(--color-background-light); border-bottom: 4px solid var(--accent-1);" data-delay="100">
+                            <div class="text-5xl mb-4" style="color: var(--accent-1);"><i class="fas fa-users-cog"></i></div>
+                            <h3 class="text-xl font-semibold mb-2">Consultoria Técnica</h3>
+                            <p class="text-text-muted">Auxílio especializado para escolher o fixador certo para seu projeto.</p>
+                        </div>
+                        <div class="p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in-up" style="background-color: var(--color-background-light); border-bottom: 4px solid var(--accent-2);" data-delay="200">
+                            <div class="text-5xl mb-4" style="color: var(--accent-2);"><i class="fas fa-award"></i></div>
+                            <h3 class="text-xl font-semibold mb-2">Qualidade Certificada</h3>
+                            <p class="text-text-muted">Testes rigorosos para máxima performance e segurança em cada peça.</p>
+                        </div>
+                        <div class="p-8 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-2 transition-all duration-300 fade-in-up" style="background-color: var(--color-background-light); border-bottom: 4px solid var(--accent-3);" data-delay="300">
+                            <div class="text-5xl mb-4" style="color: var(--accent-3);"><i class="fas fa-cogs"></i></div>
+                            <h3 class="text-xl font-semibold mb-2">Separação Ágil</h3>
+                            <p class="text-text-muted">Logística expressa sob demanda, com retirada direta em nosso CD.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contato" class="page-section py-16 lg:py-24 bg-white">
+                <div class="container mx-auto px-6">
+                    <div class="text-center mb-12 fade-in-up">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Fale com a Fortifica</h2>
+                        <div class="w-24 h-1 mx-auto mb-6" style="background-color: var(--color-highlight);"></div>
+                        <p class="text-lg text-text-muted max-w-2xl mx-auto">Precisa de suporte técnico? Nossa equipe está pronta para te ajudar a encontrar a melhor solução.</p>
+                    </div>
+                    <div class="max-w-4xl mx-auto p-6 sm:p-8 rounded-lg shadow-lg fade-in-up" style="background-color: var(--color-background-light);">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div class="flex flex-col justify-center">
+                                <h3 class="text-2xl font-semibold mb-6">Informações de Contato</h3>
+                                <div class="space-y-4 text-text-body">
+                                    <p><i class="fas fa-phone-alt mr-3 w-5 text-center" style="color: var(--color-primary-action);"></i>(11) 98844-9534</p>
+                                    <p><i class="fas fa-envelope mr-3 w-5 text-center" style="color: var(--color-primary-action);"></i>fortificafixadores@hotmail.com</p>
+                                    <p><i class="fab fa-whatsapp mr-3 w-5 text-center" style="color: var(--color-primary-action);"></i>
+                                        <a href="https://wa.me/5511988449534?text=Olá!%20Gostaria%20de%20mais%20informações." target="_blank" class="hover:underline">(11) 98844-9534</a>
+                                    </p>
+                                    <p class="mt-6 pt-4 border-t border-gray-300"><i class="fas fa-clock mr-3 w-5 text-center" style="color: var(--color-primary-action);"></i><strong>Horário:</strong> Seg a Sex, 8h - 18h</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-semibold mb-6">Envie uma Mensagem</h3>
+                                <form id="contact-form" class="space-y-4">
+                                    <input type="text" id="contact-name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-action/50 focus:border-primary-action bg-white" placeholder="Seu nome completo">
+                                    <input type="email" id="contact-email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-action/50 focus:border-primary-action bg-white" placeholder="seu@email.com">
+                                    <input type="tel" id="contact-phone" name="phone" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-action/50 focus:border-primary-action bg-white" placeholder="Seu Telefone com DDD">
+                                    <textarea id="contact-message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-action/50 focus:border-primary-action bg-white" placeholder="Sua mensagem..."></textarea>
+                                    <button type="submit" class="btn-click-effect w-full text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors hover:bg-secondary-action-hover" style="background-color: var(--color-secondary-action);">
+                                        Enviar via WhatsApp
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div id="single-page-container" class="hidden">
+            <section id="pagina-detalhes-produto" class="page-section hidden py-12" style="background-color: var(--color-background-light);">
+                <div class="container mx-auto px-6">
+                    <div class="mb-8">
+                        <button id="pdp-voltar-produtos-btn" class="font-semibold" style="color: var(--color-primary-action);">
+                            <i class="fas fa-arrow-left mr-2"></i>Voltar aos Produtos
+                        </button>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-xl">
+                        <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+                            <div>
+                                <img id="pdp-product-image" src="" alt="Imagem do Produto" class="w-full rounded-lg shadow-md border bg-white p-2" style="object-fit: contain; max-height: 450px;" onerror="this.src='https://placehold.co/400x400/FFFFFF/A7A9AC?text=Produto'; this.onerror=null;">
+                            </div>
+                            <div>
+                                <h2 id="pdp-product-name" class="text-2xl md:text-3xl font-bold mb-3"></h2>
+                                <p id="pdp-product-short-description" class="text-text-muted mb-4 text-lg"></p>
+                                <p id="pdp-product-long-description" class="text-text-body leading-relaxed mb-6"></p>
+                                <div class="flex flex-col sm:flex-row gap-4 mb-6">
+                                    <button data-id="" id="pdp-open-config-modal-btn" class="btn-click-effect w-full sm:w-auto text-white font-bold py-3 px-6 rounded-md shadow-md transition-transform hover:scale-105" style="background-color: var(--color-primary-action);">
+                                        <i class="fas fa-plus-circle mr-2"></i>Adicionar à Cotação
+                                    </button>
+                                    <a id="pdp-catalog-link" href="#" target="_blank" class="btn-secondary-outline btn-click-effect w-full sm:w-auto text-center font-semibold py-3 px-6 rounded-md transition-colors border">Baixar Catálogo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-12 pt-8 border-t">
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <div class="bg-blue-50 p-6 rounded-lg border-l-4" style="border-color: var(--accent-1);">
+                                    <h3 class="text-xl font-semibold mb-3 flex items-center"><i class="fas fa-ruler-combined mr-3" style="color: var(--accent-1);"></i>Especificações Técnicas</h3>
+                                    <ul id="pdp-technical-specs" class="list-disc list-inside text-text-body space-y-2"></ul>
+                                </div>
+                                <div class="bg-green-50 p-6 rounded-lg border-l-4" style="border-color: var(--accent-2);">
+                                    <h3 class="text-xl font-semibold mb-3 flex items-center"><i class="fas fa-hard-hat mr-3" style="color: var(--accent-2);"></i>Aplicações Comuns</h3>
+                                    <ul id="pdp-applications" class="list-disc list-inside text-text-body space-y-2"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- PRODUTOS RELACIONADOS -->
+                    <div id="pdp-recommended-products-section" class="mt-16 pt-8 border-t hidden">
+                        <h3 class="text-2xl font-bold mb-6 text-center">Produtos Relacionados</h3>
+                        <div id="pdp-recommended-products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+                            <!-- Related products injected here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pagina-cotacao" class="page-section hidden py-12" style="background-color: var(--color-background-light);">
+                <div class="container mx-auto px-6">
+                    <div class="mb-8 flex justify-between items-center">
+                        <button id="cotacao-voltar-produtos-btn" class="font-semibold" style="color: var(--color-primary-action);">
+                            <i class="fas fa-arrow-left mr-2"></i>Continuar Comprando
+                        </button>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8 text-center">Montar Cotação</h2>
+                    
+                    <div class="max-w-4xl mx-auto space-y-12">
+                        <div class="p-6 rounded-lg shadow-lg border bg-white">
+                            <h3 class="text-xl font-semibold mb-4">1. Adicionar Produtos à Lista</h3>
+                            <div class="relative">
+                                <label for="quotation-product-search" class="block text-sm font-medium text-gray-700">Buscar produto por nome:</label>
+                                <div class="relative mt-1">
+                                    <input type="text" id="quotation-product-search" autocomplete="off" class="w-full py-2 pl-10 pr-4 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-action/50 focus:border-primary-action" placeholder="Digite o nome do parafuso, porca, etc.">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fas fa-search text-gray-400"></i>
+                                    </div>
+                                </div>
+                                <div id="quotation-search-suggestions" class="suggestions-container hidden"></div>
+                            </div>
+                        </div>
+                        
+                        <div id="quotation-items-container-wrapper">
+                            <h3 class="text-xl font-semibold mb-4">Sua Lista de Itens</h3>
+                            <div id="quotation-items-container" class="space-y-4"></div>
+                            <p id="empty-quotation-msg" class="text-text-muted text-center hidden my-8 p-6 rounded-lg bg-white border-2 border-dashed">
+                                <i class="fas fa-clipboard-list fa-2x mb-2 text-gray-400"></i><br>
+                                Sua lista de cotação está vazia.
+                            </p>
+                        </div>
+
+                        <div class="p-6 rounded-lg shadow-lg border bg-white">
+                            <h3 class="text-xl font-semibold mb-4">2. Seus Dados para Contato</h3>
+                            <p class="text-sm text-red-500 mb-4">* Campos Obrigatórios</p>
+                            <form id="quotation-form" class="space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <input type="text" id="quote-name" name="quote-name" required placeholder="Nome Completo*" class="w-full py-2 px-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-action/50">
+                                    </div>
+                                    <div>
+                                        <input type="text" id="quote-company" name="quote-company" placeholder="Empresa" class="w-full py-2 px-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-action/50">
+                                    </div>
+                                    <div>
+                                        <input type="text" id="quote-cnpj" name="quote-cnpj" placeholder="CNPJ (Opcional)" class="w-full py-2 px-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-action/50">
+                                    </div>
+                                    <div>
+                                        <input type="email" id="quote-email" name="email" required placeholder="E-mail*" class="w-full py-2 px-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-action/50">
+                                    </div>
+                                    <div>
+                                        <input type="tel" id="quote-phone" name="phone" required placeholder="Telefone*" class="w-full py-2 px-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-action/50">
+                                    </div>
+                                    <div>
+                                        <input type="text" id="quote-address" name="quote-address" placeholder="Endereço (Opcional)" class="w-full py-2 px-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-action/50">
+                                    </div>
+                                </div>
+                                <textarea id="quote-observations" name="quote-observations" rows="3" placeholder="Observações..." class="w-full py-2 px-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-primary-action/50"></textarea>
+                                <div class="mt-6 flex justify-end">
+                                    <button type="submit" id="send-quotation-btn" class="btn-click-effect bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-md w-full md:w-auto shadow-md">
+                                        <i class="fas fa-file-alt mr-2"></i>Visualizar Solicitação
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pagina-visualizacao-orcamento" class="page-section hidden py-12" style="background-color: var(--color-background-light);">
+                <div class="container mx-auto px-6">
+                    <div class="mb-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+                        <button id="pvo-voltar-lista-btn" class="w-full sm:w-auto font-semibold" style="color: var(--color-primary-action);">
+                            <i class="fas fa-edit mr-2"></i>Editar Solicitação
+                        </button>
+                        <div class="flex gap-4">
+                            <button id="pvo-visualizar-pdf-btn" class="btn-click-effect w-full sm:w-auto bg-red-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-red-700 transition-colors shadow-md">
+                                <i class="fas fa-file-pdf mr-2"></i>Visualizar PDF
+                            </button>
+                             <button id="pvo-enviar-whatsapp-btn" class="btn-click-effect w-full sm:w-auto bg-green-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-green-600 transition-colors shadow-md">
+                                <i class="fab fa-whatsapp mr-2"></i>Enviar via WhatsApp
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- REMOVED BORDER CLASS BELOW AS REQUESTED -->
+                    <div id="pvo-content" class="p-6 md:p-8 rounded-lg bg-white max-w-4xl mx-auto">
+                        <!-- ALTERADO: Layout do cabeçalho ajustado para mover Vendedor para a esquerda -->
+                        <div class="pvo-header border-b pb-4 mb-6 items-end">
+                            <div class="flex flex-col justify-between h-full">
+                                <!-- LOGO LOCAL ATUALIZADA TAMBÉM NO PDF -->
+                                <img src="imagens/logo.png" alt="Fortifica Fixadores Logo" class="pvo-logo mb-6" onerror="this.src='https://placehold.co/220x60/FFFFFF/A7A9AC?text=Logo'; this.onerror=null;">
+                                <p class="text-sm">Vendedor:</p>
+                            </div>
+                            <div class="text-right">
+                                <h1 class="pvo-title">Solicitação de Orçamento</h1>
+                                <p class="text-sm mt-1">Data: <span id="pvo-date"></span></p>
+                            </div>
+                        </div>
+
+                        <div class="pvo-section mb-6">
+                            <h2 class="text-lg font-semibold mb-3 border-b pb-2">Dados do Solicitante</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-text-body">
+                                <p><strong>Nome:</strong> <span id="pvo-client-name"></span></p>
+                                <p><strong>Empresa:</strong> <span id="pvo-client-company"></span></p>
+                                <p><strong>CNPJ:</strong> <span id="pvo-client-cnpj"></span></p>
+                                <p><strong>E-mail:</strong> <span id="pvo-client-email"></span></p>
+                                <p><strong>Telefone:</strong> <span id="pvo-client-phone"></span></p>
+                                <p><strong>Endereço:</strong> <span id="pvo-client-address"></span></p>
+                            </div>
+                        </div>
+
+                        <h2 class="text-lg font-semibold mb-3 border-b pb-2">Itens Solicitados</h2>
+                        <div class="overflow-x-auto mb-6">
+                            <table id="pvo-items-table" class="w-full text-sm">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <!-- ALTERADO: Largura reduzida para Código e padding ajustado -->
+                                        <th class="px-2 py-2 text-left font-medium text-gray-600 w-20">Código</th>
+                                        <th class="px-2 py-2 text-left font-medium text-gray-600">Descrição</th>
+                                        <th class="px-2 py-2 text-left font-medium text-gray-600">Diâm.</th>
+                                        <th class="px-2 py-2 text-left font-medium text-gray-600">Comp.</th>
+                                        <th class="px-2 py-2 text-left font-medium text-gray-600">Acab.</th>
+                                        <th class="px-2 py-2 text-right font-medium text-gray-600">Qtd.</th>
+                                        <!-- NOVAS COLUNAS -->
+                                        <th class="px-2 py-2 text-right font-medium text-gray-600 w-24">Vlr. Unit.</th>
+                                        <th class="px-2 py-2 text-right font-medium text-gray-600 w-24">Vlr. Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200"></tbody>
+                            </table>
+                        </div>
+
+                        <div id="pvo-observations-section" class="hidden">
+                            <h3 class="text-lg font-semibold mb-2 border-b pb-2">Observações</h3>
+                            <p id="pvo-client-observations" class="p-3 bg-gray-50 rounded-md text-text-body whitespace-pre-wrap"></p>
+                        </div>
+
+                        <!-- NEW FOOTER FOR MANUAL FILLING -->
+                        <div class="mt-8 border-t pt-4 text-sm text-gray-800">
+                            <div class="flex justify-end">
+                                <!-- ALTERADO: Largura reduzida de w-1/2 para w-5/12 para mover mais à direita -->
+                                <div class="w-5/12 space-y-2 text-right">
+                                    <!-- ALTERADO: Removidas as classes border-b para tirar as linhas -->
+                                    <div class="flex justify-between items-end pb-1">
+                                        <span>Total de Produtos:</span>
+                                        <span class="w-32"></span>
+                                    </div>
+                                    <div class="flex justify-between items-end pb-1">
+                                        <span>Total de IPI:</span>
+                                        <span class="w-32"></span>
+                                    </div>
+                                    <div class="flex justify-between items-end font-bold text-lg pt-1">
+                                        <span>Total do Pedido:</span>
+                                        <span class="w-32"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- ALTERADO: Layout vertical à esquerda sem linhas e espaçamento específico -->
+                            <div class="mt-8 flex flex-col text-left max-w-md">
+                               <div class="mb-3">
+                                   <span class="font-bold">Dt. Entrega:</span>
+                               </div>
+                               <div class="mb-3">
+                                   <span class="font-bold">Cond. Pagto:</span>
+                               </div>
+                               <!-- Margem inferior aumentada (mb-10) para dar o espaço maior solicitado -->
+                               <div class="mb-10">
+                                   <span class="font-bold">Tipo de Frete:</span>
+                               </div>
+                               <div class="mb-3">
+                                   <span class="font-bold">Validade da Proposta:</span>
+                               </div>
+                               <div class="pt-4">
+                                   <span class="font-bold">Obs Pedido:</span>
+                               </div>
+                            </div>
+                            
+                            <div class="mt-16 flex justify-between items-end">
+                                <div class="w-1/3">
+                                    <p>Recebido em: ____/____/______</p>
+                                </div>
+                                <div class="w-1/3 text-center">
+                                    <div class="border-t border-black w-full"></div>
+                                    <p class="text-xs mt-1 font-semibold">Nomes, Carimbo, Assinatura</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="text-gray-300 py-12" style="background-color: var(--color-text-dark);">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Fortifica Fixadores</h3>
+                    <p class="text-sm text-gray-400">Distribuição técnica em fixadores estruturais. Produtos normatizados para obras, indústrias e estruturas metálicas.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#inicio-carousel" class="nav-link text-gray-400 hover:text-white transition-colors">Início</a></li>
+                        <li><a href="#produtos" class="nav-link text-gray-400 hover:text-white transition-colors">Produtos</a></li>
+                        <li><a href="#sobre-nos-section" class="nav-link text-gray-400 hover:text-white transition-colors">Sobre Nós</a></li>
+                        <li><a href="#contato" class="nav-link text-gray-400 hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Produtos</h4>
+                    <ul id="footer-product-list" class="space-y-2 text-sm">
+                        <!-- Footer product links injected by JS -->
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Contato</h4>
+                    <address class="text-sm not-italic space-y-2 text-gray-400">
+                        <p><i class="fas fa-phone-alt mr-2" style="color: var(--color-primary-action);"></i>(11) 98844-9534</p>
+                        <p><i class="fas fa-envelope mr-2" style="color: var(--color-primary-action);"></i>fortificafixadores@hotmail.com</p>
+                        <p><a href="https://www.instagram.com/fortificafixadores" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-instagram mr-2" style="color: var(--color-primary-action);"></i>fortificafixadores</a></p>
+                    </address>
+                </div>
+            </div>
+            <div class="mt-10 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+                <p>&copy; <span id="current-year"></span> Fortifica Fixadores – Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511988449534?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20os%20produtos%20da%20Fortifica%20Fixadores." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 z-40 whatsapp-float-btn" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+    
+    <div id="product-config-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-product-name">
+        <div class="modal-content product-config-modal-content">
+            <span id="close-product-config-modal" class="modal-close-btn" aria-label="Fechar">&times;</span>
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="md:w-2/5 flex flex-col items-center text-center">
+                    <h2 id="modal-product-name" class="text-xl font-bold mb-2"></h2>
+                    <img id="modal-product-image" src="" alt="Imagem do Produto" class="w-full rounded-md border p-1 mb-2" style="max-height: 180px; object-fit: contain;" onerror="this.src='https://placehold.co/200x150/FFFFFF/A7A9AC?text=Produto'; this.onerror=null;">
+                    <p id="modal-product-description" class="text-text-muted text-sm"></p>
+                </div>
+                <div class="md:w-3/5">
+                    <div class="space-y-3">
+                        <div class="relative">
+                            <label for="modal-diameter" class="block text-sm font-medium text-gray-700">Diâmetro:</label>
+                            <input type="text" id="modal-diameter" autocomplete="off" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-action/50 sm:text-sm" placeholder="Ex: 1/2&quot; ou 12mm">
+                            <div id="modal-diameter-suggestions" class="suggestions-container hidden"></div>
+                        </div>
+                        <div class="relative" id="modal-length-container">
+                            <label for="modal-length" class="block text-sm font-medium text-gray-700">Comprimento:</label>
+                            <input type="text" id="modal-length" autocomplete="off" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-action/50 sm:text-sm" placeholder="Ex: 3&quot; ou 75mm">
+                            <div id="modal-length-suggestions" class="suggestions-container hidden"></div>
+                        </div>
+                        <div>
+                            <label for="modal-finish" class="block text-sm font-medium text-gray-700">Acabamento:</label>
+                            <select id="modal-finish" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-action/50 sm:text-sm"></select>
+                        </div>
+                        <div>
+                            <label for="modal-quantity" class="block text-sm font-medium text-gray-700">Quantidade:</label>
+                            <input type="number" id="modal-quantity" value="1" min="1" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-action/50 sm:text-sm">
+                        </div>
+                    </div>
+                    <div class="mt-6 flex flex-col gap-2">
+                        <button id="add-to-quotation-btn" class="btn-click-effect w-full text-white font-bold py-2 px-4 rounded-md shadow-md" style="background-color: var(--color-primary-action);"></button>
+                        <button id="add-and-continue-btn" class="btn-click-effect w-full text-white font-semibold py-2 px-4 rounded-md text-sm shadow-md" style="background-color: var(--color-highlight);">Adicionar e Cotar Outro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        'use strict'; // Senior Practice: Enforce strict mode for safer code
+
+        // =========================================================================
+        // CONSTANTS & CONFIGURATION
+        // =========================================================================
+        const CONFIG = {
+            whatsappNumber: "5511988449534",
+            email: "fortificafixadores@hotmail.com",
+            animationDelayStep: 50,
+            carouselInterval: 5000
+        };
+
+        const PRODUCTS_DB = [
+             {
+                id: 'parafuso-inox',
+                productType: 'parafuso',
+                baseCode: '304',
+                name: 'PARAFUSO SEXTAVADO ROSCA TOTAL INOX 304',
+                image: 'imagens/parafuso-inox-304.jpg', // Caminho atualizado
+                shortDescription: 'Parafuso em aço inoxidável 304, resistente à corrosão.',
+                longDescription: 'Parafuso de aço inoxidável 304, ideal para aplicações que exigem alta resistência à corrosão, como em ambientes marinhos ou na indústria alimentícia.',
+                catalogUrl: '#',
+                rating: 4.5,
+                ratingCount: 85,
+                configurableOptions: {
+                    diameters: ['1/4"', '5/16"', '3/8"', '1/2"', '5/8"', '3/4"'],
+                    lengths: ['1"', '1-1/4"', '1-1/2"', '1-3/4"', '2"', '2-1/4"', '2-1/2"', '2-3/4"', '3"'],
+                    finishes: ['Inox Polido']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço Inoxidável AISI 304' },
+                    { label: 'Norma Principal', value: 'DIN 933' },
+                ],
+                applicationsList: ['Indústria naval', 'Equipamentos alimentícios', 'Construção civil em áreas litorâneas'],
+                relatedProducts: ['porca-inox', 'arruela-inox']
+            },
+            {
+                id: 'a325-rp',
+                productType: 'parafuso',
+                baseCode: 'A325',
+                name: 'PARAFUSO SEXTAVADO ASTM A325 – ROSCA PARCIAL',
+                image: 'imagens/parafuso-a325-rp.jpg', // Caminho atualizado
+                shortDescription: 'Shank liso para aplicação em cisalhamento e trabalho estrutural.',
+                longDescription: 'O parafuso sextavado ASTM A325 com rosca parcial é especificamente projetado para aplicações estruturais onde é necessário resistência superior ao cisalhamento. O shank liso permite que o parafuso trabalhe de forma otimizada em conexões por atrito, sendo fundamental em estruturas metálicas.',
+                catalogUrl: '#',
+                rating: 5.0,
+                ratingCount: 120,
+                configurableOptions: {
+                    diameters: ['1/2"', '5/8"', '3/4"', '7/8"', '1"', '1-1/8"', '1-1/4"', '1-1/2"'],
+                    lengths: ['1"', '1-1/4"', '1-1/2"', '1-3/4"', '2"', '2-1/4"', '2-1/2"', '2-3/4"', '3"', '3-1/4"', '3-1/2"', '3-3/4"', '4"', '4-1/4"', '4-1/2"', '4-3/4"', '5"', '5-1/4"', '5-1/2"', '5-3/4"', '6"', '6-1/4"', '6-1/2"', '6-3/4"', '7"', '7-1/4"', '7-1/2"', '7-3/4"', '8"'],
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço médio carbono chave pesada.' },
+                    { label: 'Norma Principal', value: 'ASTM A325' },
+                ],
+                applicationsList: [
+                    'Estruturas metálicas industriais',
+                    'Pontes e viadutos',
+                    'Edificações comerciais',
+                    'Torres de transmissão',
+                    'Conexões de vigas e colunas'
+                ],
+                relatedProducts: ['a194-2h', 'f436']
+            },
+            {
+                id: 'a325-rt',
+                productType: 'parafuso',
+                baseCode: 'A325RT',
+                name: 'PARAFUSO SEXTAVADO ASTM A325 – ROSCA TOTAL',
+                image: 'imagens/parafuso-a325-rt.jpg', // Caminho atualizado
+                shortDescription: 'Alta resistência, rosca total para máxima acessório. Ideal para estruturas metálicas com carga axial elevada.',
+                longDescription: 'Parafuso estrutural de alta resistência com rosca total, conforme ASTM A325. Ideal para aplicações que exigem engajamento completo da rosca e alta capacidade de carga axial.',
+                catalogUrl: '#',
+                rating: 5.0,
+                ratingCount: 120,
+                configurableOptions: {
+                    diameters: ['1/2"', '5/8"', '3/4"', '7/8"', '1"', '1-1/8"', '1-1/4"', '1-1/2"'],
+                    lengths: ['1"', '1-1/4"', '1-1/2"', '1-3/4"', '2"', '2-1/4"', '2-1/2"', '2-3/4"', '3"', '3-1/4"', '3-1/2"', '3-3/4"', '4"', '4-1/4"', '4-1/2"', '4-3/4"', '5"', '5-1/4"', '5-1/2"', '5-3/4"', '6"', '6-1/4"', '6-1/2"', '6-3/4"', '7"', '7-1/4"', '7-1/2"', '7-3/4"', '8"'],
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço médio carbono chave pesada.' },
+                    { label: 'Norma Principal', value: 'ASTM A325 Tipo 1' },
+                ],
+                applicationsList: ['Estruturas metálicas', 'Conexões com carga axial elevada', 'Equipamentos pesados'],
+                relatedProducts: ['a194-2h', 'f436', 'a325-rp']
+            },
+            {
+                id: 'a307',
+                productType: 'parafuso',
+                baseCode: 'A307',
+                name: 'PARAFUSO SEXTAVADO ASTM A307',
+                image: 'imagens/parafuso-a307.jpg', // Caminho atualizado
+                shortDescription: 'Parafuso leve para fixações industriais e prediais sem exigência de alta carga. Econômico e normatizado.',
+                longDescription: 'Parafuso de aço carbono de baixa resistência, ASTM A307 Grau A, para aplicações gerais em construção e indústria que não exigem alta capacidade de carga. Uma solução econômica e normatizada.',
+                catalogUrl: '#',
+                rating: 4.0,
+                ratingCount: 77,
+                configurableOptions: {
+                    diameters: ['1/4"', '5/16"', '3/8"', '1/2"', '5/8"', '3/4"', '7/8"', '1"', '1-1/8"', '1-1/4"', '1-1/2"'],
+                    lengths: ['1"', '1-1/4"', '1-1/2"', '1-3/4"', '2"', '2-1/4"', '2-1/2"', '2-3/4"', '3"', '3-1/4"', '3-1/2"', '3-3/4"', '4"', '4-1/4"', '4-1/2"', '4-3/4"', '5"', '5-1/4"', '5-1/2"', '5-3/4"', '6"', '6-1/4"', '6-1/2"', '6-3/4"', '7"', '7-1/4"', '7-1/2"', '7-3/4"', '8"'],
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço baixo carbono chave leve.' },
+                    { label: 'Norma Principal', value: 'ASTM A307 Grau A' },
+                ],
+                applicationsList: ['Estruturas leves', 'Fixações gerais não estruturais', 'Montagens industriais leves'],
+                relatedProducts: ['a563', 'a994-lisa']
+            },
+            {
+                id: 'parafuso-din933-5-8',
+                productType: 'parafuso',
+                baseCode: '93358',
+                name: 'PARAFUSO SEXTAVADO ROSCA INTERIA DIN 933 5.8',
+                image: 'imagens/parafuso-din933-58.jpg', // Caminho atualizado
+                shortDescription: 'Parafuso sextavado com rosca inteira DIN 933, classe de resistência 5.8.',
+                longDescription: 'Parafuso de aço carbono de média resistência, com rosca inteira, conforme norma DIN 933 classe 5.8. Ideal para aplicações gerais onde a rosca completa é necessária para o engajamento total.',
+                catalogUrl: '#',
+                rating: 4.5,
+                ratingCount: 80,
+                configurableOptions: {
+                    diameters: ['M6', 'M8', 'M10', 'M12', 'M16', 'M20', 'M24', 'M27', 'M30', 'M33', 'M36'],
+                    lengths: ['10', '12', '16', '20', '25', '30', '35', '40', '45', '50', '55', '60', '65', '70', '75', '80', '90', '100'],
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço baixo carbono' },
+                    { label: 'Norma Principal', value: 'DIN 933 Classe 5.8' }
+                ],
+                applicationsList: ['Montagens gerais', 'Estruturas leves', 'Fixações industriais'],
+                relatedProducts: ['porca-din934-5-8', 'arruela-din125']
+            },
+            {
+                id: 'parafuso-din933-8-8',
+                productType: 'parafuso',
+                baseCode: '93388',
+                name: 'PARAFUSO SEXTAVADO ROSCA INTERIA DIN 933 8.8',
+                image: 'imagens/parafuso-din933-88.jpg', // Caminho atualizado
+                shortDescription: 'Parafuso sextavado com rosca inteira DIN 933, classe de resistência 8.8.',
+                longDescription: 'Parafuso de aço de alta resistência, com rosca inteira, conforme norma DIN 933 classe 8.8. Ideal para aplicações que exigem alta capacidade de carga e resistência mecânica.',
+                catalogUrl: '#',
+                rating: 4.8,
+                ratingCount: 110,
+                configurableOptions: {
+                    diameters: ['M6', 'M8', 'M10', 'M12', 'M16', 'M20', 'M24', 'M27', 'M30', 'M33', 'M36'],
+                    lengths: ['10', '12', '16', '20', '25', '30', '35', '40', '45', '50', '55', '60', '65', '70', '75', '80', '90', '100'],
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço médio carbono' },
+                    { label: 'Norma Principal', value: 'DIN 933 Classe 8.8' }
+                ],
+                applicationsList: ['Máquinas e equipamentos', 'Estruturas de alta carga', 'Indústria automotiva'],
+                relatedProducts: ['porca-din934-8-8', 'arruela-din125']
+            },
+            {
+                id: 'barra-inox',
+                productType: 'barra',
+                baseCode: 'B304',
+                name: 'BARRA ROSCADA INOX 304',
+                image: 'imagens/barra-inox-304.jpg', // Caminho atualizado
+                shortDescription: 'Barra roscada em aço inoxidável para máxima resistência à corrosão.',
+                longDescription: 'Barra roscada fabricada em aço inoxidável 304, com rosca total. Ideal para ancoragens, chumbadores e tirantes em ambientes agressivos.',
+                catalogUrl: '#',
+                rating: 4.8,
+                ratingCount: 92,
+                configurableOptions: {
+                    diameters: ['1/4"', '5/16"', '3/8"', '1/2"', '5/8"', '3/4"', '7/8"', '1"'],
+                    lengths: ['1 Metro', '3 Metros'],
+                    finishes: ['Inox Polido']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço Inoxidável AISI 304' },
+                    { label: 'Norma Principal', value: 'Dimensional' },
+                ],
+                applicationsList: ['Instalações externas', 'Indústria química e petroquímica', 'Sistemas de suspensão'],
+                relatedProducts: ['porca-inox', 'arruela-inox']
+            },
+            {
+                id: 'barra-1020',
+                productType: 'barra',
+                baseCode: 'B',
+                name: 'BARRA ROSCADA SAE 1010/1020',
+                image: 'imagens/barra-1020.jpg', // Caminho atualizado
+                shortDescription: 'Barras com rosca total em aço carbono, para ancoragens, estruturas leves e tirantes.',
+                longDescription: 'Barra roscada fabricada em aço carbono SAE 1010/1020, com rosca total. Versátil para diversas aplicações como ancoragens, chumbadores, tirantes e montagens industriais diversas.',
+                catalogUrl: '#',
+                rating: 4.0,
+                ratingCount: 77,
+                configurableOptions: {
+                    diameters: ['1/4"', '5/16"', '3/8"', '1/2"', '5/8"', '3/4"', '7/8"', '1"', '1-1/8"', '1-1/4"', '1-1/2"'],
+                    lengths: ['1 Metro', '3 Metros', 'Outros (consultar)'],
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço baixo carbono chave leve.' },
+                    { label: 'Norma Principal', value: 'SAE J429 (referência para propriedades)' },
+                ],
+                applicationsList: ['Ancoragens', 'Tirantes', 'Estruturas leves', 'Uso industrial geral'],
+                relatedProducts: ['a563', 'a994-lisa']
+            },
+            {
+                id: 'barra-b7',
+                productType: 'barra',
+                baseCode: 'B7',
+                name: 'BARRA ROSCADA ASTM A193 B7',
+                image: 'imagens/barra-b7.jpg', // Caminho atualizado
+                shortDescription: 'Rosca contínua em aço liga Cr-Mo. Ideal para alta pressão, temperatura e montagens críticas.',
+                longDescription: 'Barra roscada de alta resistência em aço cromo-molibdênio (Cr-Mo), conforme ASTM A193 Grau B7. Projetada para aplicações de alta pressão e temperatura, como em vasos de pressão e flanges.',
+                catalogUrl: '#',
+                rating: 5.0,
+                ratingCount: 120,
+                configurableOptions: {
+                    diameters: ['1/2"', '5/8"', '3/4"', '7/8"', '1"', '1-1/8"', '1-1/4"', '1-1/2"'],
+                    lengths: ['1 Metro', '3 Metros', 'Outros (consultar)'],
+                    finishes: ['Galvanizado a Fogo', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço médio carbono chave pesada.' },
+                    { label: 'Norma Principal', value: 'ASTM A193 Grau B7' },
+                ],
+                applicationsList: ['Vasos de pressão', 'Flanges de tubulação', 'Equipamentos petroquímicos', 'Aplicações de alta temperatura'],
+                relatedProducts: ['a194-2h', 'f436']
+            },
+            {
+                id: 'porca-inox',
+                productType: 'porca',
+                baseCode: '563304',
+                name: 'PORCA SEXTAVADA INOX 304',
+                image: 'imagens/porca-inox-304.jpg', // Caminho atualizado
+                shortDescription: 'Porca em aço inoxidável 304 para alta resistência à corrosão.',
+                longDescription: 'Porca sextavada de aço inoxidável 304, ideal para uso com parafusos e barras roscadas de inox em ambientes corrosivos.',
+                catalogUrl: '#',
+                rating: 4.7,
+                ratingCount: 95,
+                configurableOptions: {
+                    diameters: ['1/4"', '5/16"', '3/8"', '1/2"', '5/8"', '3/4"', '7/8"', '1"'],
+                    lengths: null, 
+                    finishes: ['Inox Polido']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço Inoxidável AISI 304' },
+                    { label: 'Norma Principal', value: 'DIN 934' },
+                ],
+                applicationsList: ['Montagens com parafusos de inox', 'Equipamentos externos', 'Indústria química'],
+                relatedProducts: ['parafuso-inox', 'barra-inox', 'arruela-inox']
+            },
+            {
+                id: 'a194-2h',
+                productType: 'porca',
+                baseCode: 'A1942H',
+                name: 'PORCA SEXTAVADA ASTM A194 2H',
+                image: 'imagens/porca-a194-2h.jpg', // Caminho atualizado
+                shortDescription: 'Alta resistência, compatível com A325 e B7. Para uso estrutural e industrial pesado.',
+                longDescription: 'Porca sextavada de alta resistência, temperada e revenida, conforme ASTM A194 Grau 2H. Ideal para uso com parafusos de alta resistência como ASTM A325, A490 e barras roscadas ASTM A193 B7.',
+                catalogUrl: '#',
+                rating: 5.0,
+                ratingCount: 120,
+                configurableOptions: {
+                    diameters: ['3/8"', '1/2"', '5/8"', '3/4"', '7/8"', '1"', '1-1/8"', '1-1/4"', '1-1/2"'],
+                    lengths: null, 
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço médio carbono chave pesada.' },
+                    { label: 'Norma Principal', value: 'ASTM A194 Grau 2H' },
+                ],
+                applicationsList: ['Estruturas metálicas pesadas', 'Equipamentos de alta pressão', 'Flanges', 'Conjunto com parafusos A325/A490 e barras B7'],
+                relatedProducts: ['a325-rp', 'a325-rt', 'barra-b7']
+            },
+            {
+                id: 'a563',
+                productType: 'porca',
+                baseCode: 'A563',
+                name: 'PORCA SEXTAVADA ASTM A563',
+                image: 'imagens/porca-a563.jpg', // Caminho atualizado
+                shortDescription: 'Porca de aço carbono para uso geral.',
+                longDescription: 'Porca sextavada de aço carbono, conforme ASTM A563 Grau A. Adequada para uso geral em aplicações com parafusos de baixa e média resistência, como o ASTM A307.',
+                catalogUrl: '#',
+                rating: 4.0,
+                ratingCount: 77,
+                configurableOptions: {
+                    diameters: ['1/4"', '5/16"', '3/8"', '1/2"', '5/8"', '3/4"', '7/8"', '1"', '1-1/8"', '1-1/4"', '1-1/2"'],
+                    lengths: null, 
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço baixo carbono chave leve.' },
+                    { label: 'Norma Principal', value: 'ASTM A563 Grau A' },
+                ],
+                applicationsList: ['Fixações gerais', 'Estruturas leves', 'Montagens industriais com parafusos A307'],
+                relatedProducts: ['a307', 'barra-1020', 'a994-lisa']
+            },
+            {
+                id: 'porca-din934-5-8',
+                productType: 'porca',
+                baseCode: '93458',
+                name: 'PORCA SEXTAVADA DIN 934 5.8',
+                image: 'imagens/porca-din934-58.jpg', // Caminho atualizado
+                shortDescription: 'Porca sextavada DIN 934, classe de resistência 5.8, para uso general.',
+                longDescription: 'Porca sextavada de aço baixo carbono, conforme norma DIN 934 classe 5.8. Utilizada em conjunto com parafusos de classes de resistência correspondentes para fixações gerais.',
+                catalogUrl: '#',
+                rating: 4.2,
+                ratingCount: 70,
+                configurableOptions: {
+                    diameters: ['M6', 'M8', 'M10', 'M12', 'M16', 'M20', 'M24', 'M27', 'M30', 'M33', 'M36'],
+                    lengths: null,
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço baixo carbono' },
+                    { label: 'Norma Principal', value: 'DIN 934 Classe 5.8' }
+                ],
+                applicationsList: ['Fixações leves', 'Montagens diversas', 'Uso industrial geral'],
+                relatedProducts: ['parafuso-din933-5-8', 'arruela-din125']
+            },
+            {
+                id: 'porca-din934-8-8',
+                productType: 'porca',
+                baseCode: '93488',
+                name: 'PORCA SEXTAVADA DIN 934 8.8',
+                image: 'imagens/porca-din934-88.jpg', // Caminho atualizado
+                shortDescription: 'Porca sextavada DIN 934, classe de resistência 8.8, para aplicações de alta carga.',
+                longDescription: 'Porca sextavada de aço médio carbono, conforme norma DIN 934 classe 8.8. Projetada para uso com parafusos de alta resistência em aplicações que exigem maior segurança e durabilidade.',
+                catalogUrl: '#',
+                rating: 4.7,
+                ratingCount: 90,
+                configurableOptions: {
+                    diameters: ['M6', 'M8', 'M10', 'M12', 'M16', 'M20', 'M24', 'M27', 'M30', 'M33', 'M36'],
+                    lengths: null,
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço médio carbono' },
+                    { label: 'Norma Principal', value: 'DIN 934 Classe 8.8' }
+                ],
+                applicationsList: ['Estruturas pesadas', 'Máquinas industriais', 'Conjuntos de alta resistência'],
+                relatedProducts: ['parafuso-din933-8-8', 'arruela-din125']
+            },
+            {
+                id: 'arruela-inox',
+                productType: 'arruela',
+                baseCode: '994304',
+                name: 'ARRUELA LISA INOX 304',
+                image: 'imagens/arruela-inox-304.jpg', // Caminho atualizado
+                shortDescription: 'Arruela lisa em aço inox 304 para distribuição de carga e proteção contra corrosão.',
+                longDescription: 'Arruela lisa de aço inoxidável 304, utilizada para distribuir a carga de um parafuso ou porca e para prevenir danos à superfície que está sendo fixada.',
+                catalogUrl: '#',
+                rating: 4.6,
+                ratingCount: 90,
+                configurableOptions: {
+                    diameters: ['1/4"', '5/16"', '3/8"', '1/2"', '5/8"', '3/4"', '7/8"', '1"'],
+                    lengths: null, 
+                    finishes: ['Inox Polido']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço Inoxidável AISI 304' },
+                    { label: 'Norma Principal', value: 'DIN 125 A' },
+                ],
+                applicationsList: ['Montagens gerais com fixadores de inox', 'Indústria de alimentos e bebidas', 'Equipamentos médicos'],
+                relatedProducts: ['parafuso-inox', 'porca-inox']
+            },
+            {
+                id: 'f436',
+                productType: 'arruela',
+                baseCode: 'F436',
+                name: 'ARRUELA LISA ASTM F436',
+                image: 'imagens/arruela-f436.jpg', // Caminho atualizado
+                shortDescription: 'Endurecida para suportar carga estrutural.',
+                longDescription: 'Arruela lisa de aço temperado, conforme ASTM F436. Projetada para uso com parafusos estruturais de alta resistência (A325, A490) para distribuir a carga e prevenir o afrouxamento em conexões críticas.',
+                catalogUrl: '#',
+                rating: 5.0,
+                ratingCount: 120,
+                configurableOptions: {
+                    diameters: ['3/8"', '1/2"', '5/8"', '3/4"', '7/8"', '1"', '1-1/8"', '1-1/4"', '1-1/2"'],
+                    lengths: null,
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço médio carbono' },
+                    { label: 'Norma Principal', value: 'ASTM F436' },
+                ],
+                applicationsList: ['Conexões estruturais com parafusos A325/A490', 'Juntas aparafusadas de alta performance', 'Distribuição de carga'],
+                relatedProducts: ['a325-rp', 'a325-rt', 'a194-2h']
+            },
+            {
+                id: 'a994-lisa',
+                productType: 'arruela',
+                baseCode: 'A994L',
+                name: 'ARRUELA LISA ASTM A994',
+                image: 'imagens/arruela-a994.jpg', // Caminho atualizado
+                shortDescription: 'Uso geral. Sem tratamento térmico. Ideal para estruturas secundárias ou aplicações de menor carga.',
+                longDescription: 'Arruela lisa de aço carbono, para uso geral. Sem tratamento térmico específico, ideal para aplicações que não exigem alta resistência ou distribuição de carga crítica. Frequentemente utilizada com parafusos ASTM A307 e porcas A563.',
+                catalogUrl: '#',
+                rating: 4.0,
+                ratingCount: 77,
+                configurableOptions: {
+                    diameters: ['1/4"', '5/16"', '3/8"', '1/2"', '5/8"', '3/4"', '7/8"', '1"', '1-1/8"', '1-1/4"', '1-1/2"'],
+                    lengths: null,
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço baixo carbono' },
+                    { label: 'Norma Principal', value: 'Dimensional (ex: ASME B18.22.1)' },
+                ],
+                applicationsList: [ 'Montagens gerais', 'Estruturas leves e secundárias', 'Mobiliário', 'Aplicações de baixa carga' ],
+                relatedProducts: ['a307', 'a563', 'barra-1020']
+            },
+            {
+                id: 'arruela-din125',
+                productType: 'arruela',
+                baseCode: '125',
+                name: 'ARRUELA LISA DIN 125',
+                image: 'imagens/arruela-din125.jpg', // Caminho atualizado
+                shortDescription: 'Arruela lisa DIN 125 para uso geral.',
+                longDescription: 'Arruela lisa de uso geral, conforme norma DIN 125. Utilizada para distribuir a carga e proteger as superfícies em diversas aplicações de fixação.',
+                catalogUrl: '#',
+                rating: 4.0,
+                ratingCount: 60,
+                configurableOptions: {
+                    diameters: ['M6', 'M8', 'M10', 'M12', 'M16', 'M20', 'M24', 'M27', 'M30', 'M33', 'M36'],
+                    lengths: null,
+                    finishes: ['Galvanizado a Fogo', 'Zincado Branco', 'Natural (Polido)']
+                },
+                technicalInfo: [
+                    { label: 'Material Base', value: 'Aço carbono' },
+                    { label: 'Norma Principal', value: 'DIN 125' }
+                ],
+                applicationsList: ['Fixações gerais', 'Indústria leve', 'Construção civil'],
+                relatedProducts: ['parafuso-din933-5-8', 'porca-din934-5-8', 'parafuso-din933-8-8', 'porca-din934-8-8']
+            }
+        ];
+
+        // =========================================================================
+        // STATE MANAGEMENT
+        // =========================================================================
+        const appState = {
+            quotationList: [],
+            currentProductForConfig: null,
+            currentEditingQuotationItemIndex: -1,
+            currentClientDataForPreview: {},
+            currentWhatsappMessage: '',
+            carousel: {
+                currentSlide: 0,
+                intervalId: null
+            },
+            selectedCategory: null // NOVO: Estado para armazenar a categoria selecionada
+        };
+
+        // =========================================================================
+        // DOM ELEMENTS CACHE
+        // =========================================================================
+        const DOMElements = {
+            mainContentContainer: document.getElementById('main-content-container'),
+            singlePageContainer: document.getElementById('single-page-container'),
+            
+            // Category Elements - NOVO
+            categoriesContainer: document.getElementById('categories-container'),
+            productsListContainer: document.getElementById('products-list-container'),
+            backToCategoriesBtn: document.getElementById('back-to-categories-btn'),
+            currentCategoryTitle: document.getElementById('current-category-title'),
+            productGrid: document.getElementById('product-grid'),
+
+            mobileMenuButton: document.getElementById('mobile-menu-button'),
+            mobileMenu: document.getElementById('mobile-menu'),
+            quotationItemCount: document.getElementById('quotation-item-count'),
+            quotationItemCountMobile: document.getElementById('quotation-item-count-mobile'),
+            currentYearSpan: document.getElementById('current-year'),
+            footerProductList: document.getElementById('footer-product-list'),
+            contactForm: document.getElementById('contact-form'),
+            // Carousel
+            carouselSlides: document.querySelectorAll('.carousel-slide'),
+            carouselDotsContainer: document.querySelector('.carousel-dots'),
+            // Product Detail Page (PDP)
+            pdp: {
+                page: document.getElementById('pagina-detalhes-produto'),
+                name: document.getElementById('pdp-product-name'),
+                image: document.getElementById('pdp-product-image'),
+                shortDesc: document.getElementById('pdp-product-short-description'),
+                longDesc: document.getElementById('pdp-product-long-description'),
+                catalogLink: document.getElementById('pdp-catalog-link'),
+                techSpecs: document.getElementById('pdp-technical-specs'),
+                applications: document.getElementById('pdp-applications'),
+                recommendedSection: document.getElementById('pdp-recommended-products-section'),
+                recommendedGrid: document.getElementById('pdp-recommended-products-grid'),
+                openConfigModalBtn: document.getElementById('pdp-open-config-modal-btn')
+            },
+            // Quotation Page
+            quotation: {
+                page: document.getElementById('pagina-cotacao'),
+                itemsContainer: document.getElementById('quotation-items-container'),
+                emptyMsg: document.getElementById('empty-quotation-msg'),
+                form: document.getElementById('quotation-form'),
+                productSearchInput: document.getElementById('quotation-product-search'),
+                productSearchSuggestions: document.getElementById('quotation-search-suggestions'),
+            },
+            // Quotation Preview Page (PVO)
+            pvo: {
+                page: document.getElementById('pagina-visualizacao-orcamento'),
+                content: document.getElementById('pvo-content'),
+                clientName: document.getElementById('pvo-client-name'),
+                clientCompany: document.getElementById('pvo-client-company'),
+                clientCnpj: document.getElementById('pvo-client-cnpj'),
+                clientEmail: document.getElementById('pvo-client-email'),
+                clientPhone: document.getElementById('pvo-client-phone'),
+                clientAddress: document.getElementById('pvo-client-address'),
+                itemsTableBody: document.querySelector('#pvo-items-table tbody'),
+                observationsSection: document.getElementById('pvo-observations-section'),
+                clientObservations: document.getElementById('pvo-client-observations'),
+                visualizarPdfBtn: document.getElementById('pvo-visualizar-pdf-btn'),
+                dateSpan: document.getElementById('pvo-date'),
+            },
+            // Product Config Modal
+            modal: {
+                element: document.getElementById('product-config-modal'),
+                name: document.getElementById('modal-product-name'),
+                image: document.getElementById('modal-product-image'),
+                description: document.getElementById('modal-product-description'),
+                diameterInput: document.getElementById('modal-diameter'),
+                diameterSuggestions: document.getElementById('modal-diameter-suggestions'),
+                lengthContainer: document.getElementById('modal-length-container'),
+                lengthInput: document.getElementById('modal-length'),
+                lengthSuggestions: document.getElementById('modal-length-suggestions'),
+                finishSelect: document.getElementById('modal-finish'),
+                quantityInput: document.getElementById('modal-quantity'),
+            }
+        };
+
+        // =========================================================================
+        // UTILITIES & HELPERS
+        // =========================================================================
+
+        function showToast(message, type = 'success') {
+            const toast = document.createElement('div');
+            toast.textContent = message;
+            toast.className = `fixed bottom-5 right-5 p-3 rounded-md shadow-lg z-[1001] text-sm text-white ${type === 'success' ? 'bg-green-500' : 'bg-red-500'} transition-opacity duration-300`;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+
+        // Safe parser for fractions instead of using eval()
+        function parseDimensionToMm(value) {
+            if (!value) return 0;
+            // Handle mm directly
+            if (value.toLowerCase().includes('mm')) {
+                return parseFloat(value.replace(/[^\d.]/g, ''));
+            }
+            // Handle fractions (e.g., 1-1/2 or 1/2)
+            try {
+                let parts = value.replace(/"/g, '').split('-');
+                let total = 0;
+                
+                parts.forEach(part => {
+                    if (part.includes('/')) {
+                        let [num, den] = part.split('/');
+                        total += parseFloat(num) / parseFloat(den);
+                    } else {
+                        total += parseFloat(part);
+                    }
+                });
+                return Math.round(total * 25.4); // Convert inches to mm
+            } catch (e) {
+                console.warn('Error parsing dimension:', value);
+                return 0;
+            }
+        }
+
+        function generateProductCode(item, product) {
+            const isDiameterCustom = !product.configurableOptions.diameters.includes(item.diameter);
+            const hasLength = product.configurableOptions.lengths;
+            const isLengthCustom = hasLength ? !product.configurableOptions.lengths.includes(item.length) : false;
+
+            if (isDiameterCustom || isLengthCustom) {
+                return product.productType.toUpperCase();
+            }
+            
+            const getCode = (val, map) => map[val] || val.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+            
+            const diaMap = {'1/4"':'06','5/16"':'07','3/8"':'09','1/2"':'12','5/8"':'15','3/4"':'19','7/8"':'22','1"':'25'};
+            const finishMap = {'Galvanizado a Fogo':'GF','Zincado Branco':'ZB','Natural (Polido)':'NT','Inox Polido': 'IX'};
+
+            const diaCode = getCode(item.diameter, diaMap);
+            const finishCode = getCode(item.finish, finishMap);
+
+            if (product.productType === 'parafuso') {
+                if (!item.length || item.length === 'N/A') return `${product.baseCode}${diaCode}${finishCode}`;
+                const mm = parseDimensionToMm(item.length);
+                const lenCode = String(mm).padStart(3, '0');
+                return `${product.baseCode}${diaCode}${lenCode}${finishCode}`;
+            }
+            if (product.productType === 'barra') {
+                const lenCode = item.length.includes('1') ? '1000' : '3000';
+                return `${product.baseCode}${diaCode}${lenCode}${finishCode}`;
+            }
+            return `${product.baseCode}${diaCode}${finishCode}`;
+        }
+
+        function generateStarRating(rating) {
+            let starsHtml = '';
+            const fullStars = Math.floor(rating || 0);
+            const halfStar = (rating || 0) % 1 >= 0.5;
+            for (let i = 0; i < 5; i++) {
+                if (i < fullStars) {
+                    starsHtml += '<i class="fas fa-star text-yellow-400 text-xs"></i>';
+                } else if (i === fullStars && halfStar) {
+                    starsHtml += '<i class="fas fa-star-half-alt text-yellow-400 text-xs"></i>';
+                } else {
+                    starsHtml += '<i class="far fa-star text-gray-300 text-xs"></i>';
+                }
+            }
+            return `<div class="flex gap-1">${starsHtml}</div>`;
+        }
+
+        // =========================================================================
+        // VIEW / RENDERERS
+        // =========================================================================
+
+        function updateQuotationItemCount() {
+            const count = appState.quotationList.length;
+            if (DOMElements.quotationItemCount) {
+                DOMElements.quotationItemCount.textContent = count;
+                DOMElements.quotationItemCount.classList.toggle('hidden', count === 0);
+            }
+            if (DOMElements.quotationItemCountMobile) {
+                DOMElements.quotationItemCountMobile.textContent = count;
+                DOMElements.quotationItemCountMobile.classList.toggle('hidden', count === 0);
+            }
+        }
+
+        function populateSelectWithOptions(selectElement, optionsArray) {
+            if (!selectElement || !optionsArray) return;
+            selectElement.innerHTML = '';
+            optionsArray.forEach(opt => {
+                const option = document.createElement('option');
+                option.value = opt;
+                option.textContent = opt;
+                selectElement.appendChild(option);
+            });
+        }
+
+        function setupSuggestions(inputEl, containerEl, options) {
+            if (!inputEl || !containerEl || !options) return;
+
+            const populate = () => {
+                containerEl.innerHTML = '';
+                const searchTerm = inputEl.value.toLowerCase();
+                const filteredOptions = options.filter(opt => opt.toLowerCase().includes(searchTerm));
+                
+                if (filteredOptions.length === 0 && searchTerm !== '') {
+                    containerEl.classList.add('hidden');
+                    return;
+                }
+
+                filteredOptions.forEach(opt => {
+                    const item = document.createElement('div');
+                    item.className = 'suggestion-item';
+                    item.textContent = opt;
+                    item.addEventListener('mousedown', (e) => {
+                        e.preventDefault();
+                        inputEl.value = opt;
+                        containerEl.classList.add('hidden');
+                    });
+                    containerEl.appendChild(item);
+                });
+
+                containerEl.classList.remove('hidden');
+            };
+
+            inputEl.addEventListener('focus', populate);
+            inputEl.addEventListener('input', populate);
+            inputEl.addEventListener('blur', () => setTimeout(() => containerEl.classList.add('hidden'), 200));
+        }
+
+        function createProductCardHTML(product, index) {
+            const accentColors = ['--accent-1', '--accent-2', '--accent-3', '--accent-4'];
+            const accentColor = accentColors[index % accentColors.length];
+            return `
+                <div class="product-card fade-in-up bg-white rounded-lg shadow-lg overflow-hidden flex flex-col" style="border-color: var(${accentColor}); transition-delay: ${index * CONFIG.animationDelayStep}ms;">
+                    <div class="relative">
+                        <img src="${product.image}" alt="${product.name}" class="product-card-image" onerror="this.src='https://placehold.co/300x200/FFFFFF/A7A9AC?text=${encodeURIComponent(product.name)}'; this.onerror=null;">
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="text-md font-semibold mb-2 h-12" style="color: var(--color-text-dark);">${product.name}</h3>
+                        <p class="text-sm mb-3 flex-grow" style="color: var(--color-text-muted);">${product.shortDescription}</p>
+                        <div class="mb-3">${generateStarRating(product.rating)}</div>
+                        <div class="mt-auto pt-4 grid grid-cols-2 gap-2">
+                            <button data-id="${product.id}" class="view-details-btn w-full text-white font-semibold py-2 px-3 rounded-md hover:opacity-90 transition-opacity text-sm shadow" style="background-color: var(--color-secondary-action);">Detalhes</button>
+                            <button data-id="${product.id}" class="add-to-quotation-btn w-full text-white font-semibold py-2 px-3 rounded-md hover:opacity-90 transition-opacity text-sm shadow" style="background-color: var(--color-primary-action);">Cotar</button>
+                        </div>
+                    </div>
+                </div>`;
+        }
+
+        // NOVO: Função para criar o card de categoria
+        function createCategoryCardHTML(category, index) {
+            // ALTERADO: Mapeamento de imagens representativas para cada categoria
+            // Usando imagens de produtos existentes como capa da categoria
+            const categoryImages = {
+                'parafuso': 'imagens/parafuso-a325-rp.jpg', 
+                'barra': 'imagens/barra-b7.jpg', 
+                'porca': 'imagens/porca-a194-2h.jpg', 
+                'arruela': 'imagens/arruela-f436.jpg' 
+            };
+            
+            const labels = {
+                'parafuso': 'Parafusos',
+                'barra': 'Barras Roscadas',
+                'porca': 'Porcas',
+                'arruela': 'Arruelas'
+            };
+            
+            // Fallback para placeholder se a imagem não carregar
+            const fallbackImage = `https://placehold.co/300x200/FFFFFF/A7A9AC?text=${labels[category]}`;
+
+            return `
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center hover:shadow-xl fade-in-up" 
+                     data-category="${category}" 
+                     style="transition-delay: ${index * 100}ms;">
+                    <div class="category-image-container">
+                        <img src="${categoryImages[category]}" 
+                             alt="${labels[category]}" 
+                             class="category-image"
+                             onerror="this.src='${fallbackImage}'; this.onerror=null;">
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">${labels[category]}</h3>
+                    <p class="text-sm text-gray-500 mt-2 font-medium">Ver catálogo completo <i class="fas fa-arrow-right ml-1 text-xs"></i></p>
+                </div>
+            `;
+        }
+
+        function renderCategories() {
+            const categories = ['parafuso', 'barra', 'porca', 'arruela'];
+            DOMElements.categoriesContainer.innerHTML = categories.map((cat, index) => createCategoryCardHTML(cat, index)).join('');
+            
+            // Adiciona listeners aos cards de categoria
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const category = card.dataset.category;
+                    selectCategory(category);
+                });
+            });
+        }
+
+        function selectCategory(category) {
+            appState.selectedCategory = category;
+            
+            // Esconde categorias, mostra lista de produtos
+            DOMElements.categoriesContainer.classList.add('hidden');
+            DOMElements.productsListContainer.classList.remove('hidden');
+            
+            // Atualiza título
+            const labels = {
+                'parafuso': 'Parafusos',
+                'barra': 'Barras Roscadas',
+                'porca': 'Porcas',
+                'arruela': 'Arruelas'
+            };
+            DOMElements.currentCategoryTitle.textContent = labels[category];
+            
+            // Filtra e renderiza produtos
+            const filteredProducts = PRODUCTS_DB.filter(p => p.productType === category);
+            renderProductsGrid(filteredProducts);
+            
+            // Scroll suave para o topo da lista
+            DOMElements.productsListContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function backToCategories() {
+            appState.selectedCategory = null;
+            DOMElements.productsListContainer.classList.add('hidden');
+            DOMElements.categoriesContainer.classList.remove('hidden');
+            // Scroll suave para o topo das categorias
+            document.getElementById('produtos').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function renderProductsGrid(productsToRender) {
+            if (!DOMElements.productGrid) return;
+            DOMElements.productGrid.innerHTML = productsToRender.map(createProductCardHTML).join('');
+            
+            // Re-aplicar animações de scroll nos novos elementos
+            setupScrollAnimations();
+        }
+
+        function renderQuotationList() {
+            const { itemsContainer, emptyMsg } = DOMElements.quotation;
+            if (!itemsContainer || !emptyMsg) return;
+
+            itemsContainer.innerHTML = '';
+            emptyMsg.classList.toggle('hidden', appState.quotationList.length > 0);
+
+            if (appState.quotationList.length === 0) return;
+
+            const listFragment = document.createDocumentFragment();
+
+            appState.quotationList.forEach((item, index) => {
+                const product = PRODUCTS_DB.find(p => p.id === item.productId);
+                if (!product) return;
+
+                const itemEl = document.createElement('div');
+                const bgColor = index % 2 === 0 ? 'bg-white' : 'bg-gray-50';
+                itemEl.className = `flex items-center gap-4 p-3 rounded-lg shadow-sm border ${bgColor}`;
+
+                const itemDescription = (item.productType === 'parafuso' || item.productType === 'barra')
+                    ? `${item.diameter} x ${item.length}`
+                    : `${item.diameter}`;
+
+                itemEl.innerHTML = `
+                    <img src="${product.image}" alt="${item.productName}" class="w-20 h-20 object-contain rounded-md border p-1" onerror="this.src='https://placehold.co/80x80/FFFFFF/A7A9AC?text=Item'; this.onerror=null;">
+                    <div class="flex-grow">
+                        <p class="font-semibold" style="color: var(--color-text-dark);">${item.productName}</p>
+                        <p class="text-sm" style="color: var(--color-text-muted);">
+                            ${itemDescription} - ${item.finish} - Qtd: ${item.quantity}
+                        </p>
+                        <p class="text-xs text-gray-400">Código: ${item.productCode}</p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <button data-index="${index}" class="edit-item-btn btn-click-effect p-2 text-blue-500 hover:text-blue-700" title="Editar Item"><i class="fas fa-edit"></i></button>
+                        <button data-index="${index}" class="remove-item-btn btn-click-effect p-2 text-red-500 hover:text-red-700" title="Remover Item"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                `;
+                listFragment.appendChild(itemEl);
+            });
+            itemsContainer.appendChild(listFragment);
+        }
+
+        function renderProductDetailPage(productId) {
+            const product = PRODUCTS_DB.find(p => p.id === productId);
+            if (!product) {
+                showToast("Produto não encontrado.", "error");
+                return;
+            }
+            
+            const { pdp } = DOMElements;
+            pdp.name.textContent = product.name;
+            pdp.image.src = product.image;
+            pdp.image.alt = product.name;
+            pdp.shortDesc.textContent = product.shortDescription;
+            pdp.longDesc.textContent = product.longDescription || '';
+            pdp.catalogLink.href = product.catalogUrl || '#';
+            pdp.openConfigModalBtn.dataset.id = productId;
+
+            const createListItems = (arr) => arr.map(item => `<li>${item}</li>`).join('');
+            const createSpecItems = (arr) => arr.map(spec => `<li><strong>${spec.label}:</strong> ${spec.value}</li>`).join('');
+
+            pdp.techSpecs.innerHTML = createSpecItems(product.technicalInfo);
+            pdp.applications.innerHTML = createListItems(product.applicationsList);
+
+            // Related Products Logic - IMPROVED AND FIXED
+            pdp.recommendedGrid.innerHTML = '';
+            let related = [];
+
+            // 1. Try to get specifically related products from DB
+            if (product.relatedProducts && product.relatedProducts.length > 0) {
+                related = product.relatedProducts
+                    .map(id => PRODUCTS_DB.find(p => p.id === id))
+                    .filter(Boolean); // Filter out undefined if ID not found
+            }
+
+            // 2. Fallback: If no specific related products found (or IDs are wrong),
+            // show random products from the same category or just random ones.
+            if (related.length === 0) {
+                // Try finding products of same type (excluding current)
+                related = PRODUCTS_DB.filter(p => p.productType === product.productType && p.id !== product.id);
+                
+                // If still not enough, grab any other products
+                if (related.length < 3) {
+                    const others = PRODUCTS_DB.filter(p => p.id !== product.id && !related.includes(p));
+                    related = [...related, ...others];
+                }
+                
+                // Shuffle and pick top 3
+                related = related.sort(() => 0.5 - Math.random()).slice(0, 3);
+            }
+
+            // 3. Render
+            if (related.length > 0) {
+                pdp.recommendedGrid.innerHTML = related.map((p, i) => createProductCardHTML(p, i)).join('');
+                pdp.recommendedSection.classList.remove('hidden');
+                
+                // Trigger animation for new elements
+                setTimeout(() => {
+                    const newCards = pdp.recommendedGrid.querySelectorAll('.product-card');
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-visible');
+                            }
+                        });
+                    }, { threshold: 0.1 });
+                    newCards.forEach(card => observer.observe(card));
+                }, 100);
+
+            } else {
+                pdp.recommendedSection.classList.add('hidden');
+            }
+
+            showSinglePage('pagina-detalhes-produto');
+        }
+
+        function renderQuotationPreview() {
+            const { pvo } = DOMElements;
+            const clientData = appState.currentClientDataForPreview;
+
+            // Header Data
+            const today = new Date().toLocaleDateString('pt-BR');
+            if(pvo.dateSpan) pvo.dateSpan.textContent = today;
+
+            // Client Data
+            pvo.clientName.textContent = clientData.name;
+            pvo.clientCompany.textContent = clientData.company || 'N/A';
+            pvo.clientCnpj.textContent = clientData.cnpj || 'N/A';
+            pvo.clientEmail.textContent = clientData.email;
+            pvo.clientPhone.textContent = clientData.phone;
+            pvo.clientAddress.textContent = clientData.address || 'N/A';
+
+            pvo.itemsTableBody.innerHTML = '';
+            appState.quotationList.forEach(item => {
+                const row = pvo.itemsTableBody.insertRow();
+                // ALTERADO: Removida a classe 'border-b border-gray-100' das últimas duas células
+                row.innerHTML = `
+                    <td class="px-2 py-2 text-xs">${item.productCode}</td>
+                    <td class="px-2 py-2">${item.productName}</td>
+                    <td class="px-2 py-2">${item.diameter}</td>
+                    <td class="px-2 py-2">${item.length}</td>
+                    <td class="px-2 py-2">${item.finish}</td>
+                    <td class="px-2 py-2 text-right font-bold">${item.quantity}</td>
+                    <td class="px-2 py-2"></td> <!-- Sem linha -->
+                    <td class="px-2 py-2"></td> <!-- Sem linha -->
+                `;
+            });
+
+            pvo.observationsSection.classList.toggle('hidden', !clientData.observations);
+            if(clientData.observations) {
+                pvo.clientObservations.textContent = clientData.observations;
+            }
+            
+            generateWhatsappMessage();
+            showSinglePage('pagina-visualizacao-orcamento');
+        }
+
+        // =========================================================================
+        // NAVIGATION LOGIC
+        // =========================================================================
+
+        function showMainContentAndScroll(sectionId) {
+            DOMElements.mainContentContainer.classList.remove('hidden');
+            DOMElements.singlePageContainer.classList.add('hidden');
+
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                setTimeout(() => {
+                    const headerOffset = document.querySelector('header')?.offsetHeight || 74;
+                    const elementPosition = targetSection.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }, 10); 
+            }
+        }
+
+        function showSinglePage(pageIdToShow) {
+            DOMElements.mainContentContainer.classList.add('hidden');
+            DOMElements.singlePageContainer.classList.remove('hidden');
+
+            DOMElements.singlePageContainer.querySelectorAll('.page-section').forEach(page => {
+                page.classList.toggle('hidden', page.id !== pageIdToShow);
+            });
+
+            window.scrollTo({ top: 0, behavior: 'auto' });
+        }
+
+        // =========================================================================
+        // MODAL LOGIC
+        // =========================================================================
+
+        function openProductConfigModal(productId, quotationItemIndex = -1) {
+            const product = PRODUCTS_DB.find(p => p.id === productId);
+            if (!product) {
+                showToast("Erro ao configurar produto.", "error");
+                return;
+            }
+
+            appState.currentProductForConfig = product;
+            appState.currentEditingQuotationItemIndex = quotationItemIndex;
+            
+            const { modal } = DOMElements;
+            modal.name.textContent = product.name;
+            modal.image.src = product.image;
+            modal.description.textContent = product.shortDescription;
+
+            const options = product.configurableOptions;
+            setupSuggestions(modal.diameterInput, modal.diameterSuggestions, options.diameters);
+            
+            modal.lengthContainer.classList.toggle('hidden', !options.lengths);
+            if(options.lengths) {
+                setupSuggestions(modal.lengthInput, modal.lengthSuggestions, options.lengths);
+            }
+            
+            populateSelectWithOptions(modal.finishSelect, options.finishes);
+
+            const item = quotationItemIndex > -1 ? appState.quotationList[quotationItemIndex] : null;
+            modal.diameterInput.value = item ? item.diameter : '';
+            modal.lengthInput.value = item && item.length !== 'N/A' ? item.length : '';
+            modal.finishSelect.value = item ? item.finish : options.finishes[0];
+            modal.quantityInput.value = item ? item.quantity : 1;
+            
+            document.getElementById('add-to-quotation-btn').textContent = item ? "Atualizar Item" : "Adicionar e Fechar";
+            
+            modal.element.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProductConfigModal() {
+            DOMElements.modal.element.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            appState.currentProductForConfig = null;
+            appState.currentEditingQuotationItemIndex = -1;
+        }
+
+        function handleAddToQuotation(shouldClose) {
+            const product = appState.currentProductForConfig;
+            if (!product) return;
+
+            const { modal } = DOMElements;
+            const itemDetails = {
+                productId: product.id,
+                productName: product.name,
+                productType: product.productType,
+                diameter: modal.diameterInput.value.trim(),
+                length: product.configurableOptions.lengths ? modal.lengthInput.value.trim() : 'N/A',
+                finish: modal.finishSelect.value,
+                quantity: parseInt(modal.quantityInput.value, 10)
+            };
+
+            if (!itemDetails.diameter || (product.configurableOptions.lengths && !itemDetails.length)) {
+                showToast("Por favor, preencha todas as opções.", "error");
+                return;
+            }
+            if (isNaN(itemDetails.quantity) || itemDetails.quantity <= 0) {
+                showToast("Quantidade inválida.", "error");
+                return;
+            }
+
+            itemDetails.productCode = generateProductCode(itemDetails, product);
+
+            if (appState.currentEditingQuotationItemIndex > -1) {
+                appState.quotationList[appState.currentEditingQuotationItemIndex] = itemDetails;
+                showToast('Item atualizado!');
+            } else {
+                appState.quotationList.push(itemDetails);
+                showToast('Produto adicionado à cotação!');
+            }
+
+            updateQuotationItemCount();
+            
+            if (shouldClose) {
+                closeProductConfigModal();
+            } else {
+                modal.diameterInput.value = '';
+                modal.lengthInput.value = '';
+                modal.quantityInput.value = 1;
+                modal.diameterInput.focus();
+            }
+            
+            if(!DOMElements.quotation.page.classList.contains('hidden')) {
+                renderQuotationList();
+            }
+        }
+
+        // =========================================================================
+        // FORM & EXPORT LOGIC
+        // =========================================================================
+
+        function handleQuotationSubmit(event) {
+            event.preventDefault();
+            if (appState.quotationList.length === 0) {
+                showToast("Sua lista de cotação está vazia.", "error");
+                return;
+            }
+
+            const formData = new FormData(DOMElements.quotation.form);
+            appState.currentClientDataForPreview = {
+                name: formData.get('quote-name'),
+                company: formData.get('quote-company'),
+                cnpj: formData.get('quote-cnpj'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                address: formData.get('quote-address'),
+                observations: formData.get('quote-observations')
+            };
+            
+            if (!appState.currentClientDataForPreview.name || !appState.currentClientDataForPreview.email || !appState.currentClientDataForPreview.phone) {
+                showToast("Preencha os campos obrigatórios.", "error");
+                return;
+            }
+
+            renderQuotationPreview();
+        }
+
+        function generateWhatsappMessage() {
+            const clientData = appState.currentClientDataForPreview;
+            let message = "🔩 *Solicitação de Cotação - Fortifica Fixadores* 🔩\n\n";
+            message += `*Cliente:* ${clientData.name}\n`;
+            if (clientData.company) message += `*Empresa:* ${clientData.company}\n`;
+            if (clientData.cnpj) message += `*CNPJ:* ${clientData.cnpj}\n`;
+            message += `*Contato:* ${clientData.phone} | ${clientData.email}\n`;
+            if (clientData.address) message += `*Endereço:* ${clientData.address}\n`;
+            message += "\n*Itens Solicitados:*\n";
+            appState.quotationList.forEach((item, i) => {
+                message += `${i+1}. *${item.productName}*\n`;
+                const itemDescription = (item.productType === 'parafuso' || item.productType === 'barra')
+                    ? `   - Medidas: ${item.diameter} x ${item.length}\n`
+                    : `   - Diâmetro: ${item.diameter}\n`;
+                message += itemDescription;
+                message += `   - Acab.: ${item.finish}, Qtd: ${item.quantity}\n`;
+                message += `   - Código: ${item.productCode}\n`;
+            });
+            if (clientData.observations) {
+                message += `\n*Observações:*\n${clientData.observations}`;
+            }
+            appState.currentWhatsappMessage = message;
+        }
+
+        function sendWhatsappMessage() {
+            const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(appState.currentWhatsappMessage)}`;
+            window.open(url, '_blank');
+        }
+
+        function viewQuotationPDF() {
+            const { content } = DOMElements.pvo;
+            const opt = {
+                margin: [10, 10, 10, 10], // Margens: Topo, Direita, Base, Esquerda (mm)
+                filename: `Solicitacao_${appState.currentClientDataForPreview.name.replace(/\s/g, '_')}.pdf`,
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+                // ALTERADO: Configuração de quebra de página ajustada para evitar grandes espaços em branco
+                pagebreak: { mode: ['css', 'legacy'] } 
+            };
+            // ALTERADO: Abre o PDF em uma nova aba para visualização em vez de baixar
+            html2pdf().from(content).set(opt).output('dataurlnewwindow');
+        }
+
+        // =========================================================================
+        // CAROUSEL & ANIMATION
+        // =========================================================================
+
+        function initCarousel() {
+            const { carouselSlides, carouselDotsContainer } = DOMElements;
+            if (carouselSlides.length <= 1) return;
+
+            // Generate Dots
+            carouselSlides.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                dot.dataset.index = i;
+                if (i === 0) dot.classList.add('active');
+                carouselDotsContainer.appendChild(dot);
+            });
+
+            const showSlide = (index) => {
+                appState.carousel.currentSlide = index;
+                carouselSlides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+                carouselDotsContainer.querySelectorAll('.carousel-dot').forEach((dot, i) => dot.classList.toggle('active', i === index));
+            };
+
+            const nextSlide = () => {
+                const newIndex = (appState.carousel.currentSlide + 1) % carouselSlides.length;
+                showSlide(newIndex);
+            };
+
+            const prevSlide = () => {
+                const newIndex = (appState.carousel.currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+                showSlide(newIndex);
+            };
+            
+            const resetInterval = () => {
+                clearInterval(appState.carousel.intervalId);
+                appState.carousel.intervalId = setInterval(nextSlide, CONFIG.carouselInterval);
+            };
+
+            document.getElementById('nextBtn').addEventListener('click', () => { nextSlide(); resetInterval(); });
+            document.getElementById('prevBtn').addEventListener('click', () => { prevSlide(); resetInterval(); });
+            carouselDotsContainer.addEventListener('click', (e) => {
+                if(e.target.matches('.carousel-dot')) {
+                    showSlide(parseInt(e.target.dataset.index));
+                    resetInterval();
+                }
+            });
+
+            resetInterval();
+        }
+
+        function setupScrollAnimations() {
+            const animatedElements = document.querySelectorAll('.fade-in-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = parseInt(entry.target.dataset.delay || "0");
+                        setTimeout(() => {
+                            entry.target.classList.add('is-visible');
+                        }, delay);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            animatedElements.forEach(el => observer.observe(el));
+        }
+
+        // =========================================================================
+        // INITIALIZATION & EVENT LISTENERS
+        // =========================================================================
+        
+        function setupEventListeners() {
+            // Main navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href').substring(1);
+                    showMainContentAndScroll(targetId);
+                    if (!DOMElements.mobileMenu.classList.contains('hidden')) {
+                        DOMElements.mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Mobile menu
+            DOMElements.mobileMenuButton.addEventListener('click', () => {
+                DOMElements.mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Cart/Quotation buttons
+            document.querySelectorAll('.quotation-cart-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    renderQuotationList();
+                    showSinglePage('pagina-cotacao');
+                });
+            });
+
+            // GLOBAL Event Delegation (Click)
+            document.body.addEventListener('click', (e) => {
+                const button = e.target.closest('button');
+                if (!button) return;
+
+                // CORREÇÃO: Fecha a lista de sugestões se um botão dentro dela for clicado
+                if (button.closest('#quotation-search-suggestions')) {
+                    document.getElementById('quotation-search-suggestions').classList.add('hidden');
+                }
+
+                // Product Grid Actions
+                if (button.matches('.view-details-btn')) renderProductDetailPage(button.dataset.id);
+                if (button.matches('.add-to-quotation-btn')) openProductConfigModal(button.dataset.id);
+                
+                // Quotation List Actions
+                if (button.matches('.edit-item-btn')) {
+                    const index = parseInt(button.dataset.index);
+                    openProductConfigModal(appState.quotationList[index].productId, index);
+                }
+                if (button.matches('.remove-item-btn')) {
+                    const index = parseInt(button.dataset.index);
+                    appState.quotationList.splice(index, 1);
+                    renderQuotationList();
+                    updateQuotationItemCount();
+                    showToast("Item removido.", 'error');
+                }
+            });
+
+            // Page Specific Actions (using cached elements)
+            DOMElements.pdp.page.addEventListener('click', (e) => {
+                if(e.target.closest('#pdp-voltar-produtos-btn')) showMainContentAndScroll('produtos');
+                if(e.target.closest('#pdp-open-config-modal-btn')) openProductConfigModal(e.target.closest('#pdp-open-config-modal-btn').dataset.id);
+            });
+
+            DOMElements.quotation.page.addEventListener('click', (e) => {
+                if(e.target.closest('#cotacao-voltar-produtos-btn')) showMainContentAndScroll('produtos');
+            });
+
+            DOMElements.pvo.page.addEventListener('click', (e) => {
+                if(e.target.closest('#pvo-voltar-lista-btn')) showSinglePage('pagina-cotacao');
+                if(e.target.closest('#pvo-visualizar-pdf-btn')) viewQuotationPDF();
+                if(e.target.closest('#pvo-enviar-whatsapp-btn')) sendWhatsappMessage();
+            });
+
+            // Carousel CTA
+            document.getElementById('carousel-cotacao-btn').addEventListener('click', () => {
+                renderQuotationList();
+                showSinglePage('pagina-cotacao');
+            });
+
+            // Modal Actions
+            document.getElementById('close-product-config-modal').addEventListener('click', closeProductConfigModal);
+            document.getElementById('add-to-quotation-btn').addEventListener('click', () => handleAddToQuotation(true));
+            document.getElementById('add-and-continue-btn').addEventListener('click', () => handleAddToQuotation(false));
+            
+            // Search Input Logic
+            const { productSearchInput, productSearchSuggestions } = DOMElements.quotation;
+            
+            // CORREÇÃO: Previne que o input perca o foco (blur) ao clicar na lista de sugestões
+            productSearchSuggestions.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+            });
+
+            const populateSearchSuggestions = (filter = '') => {
+                const searchTerm = filter.toLowerCase();
+                const filtered = PRODUCTS_DB.filter(p => p.name.toLowerCase().includes(searchTerm));
+                productSearchSuggestions.innerHTML = '';
+                
+                if (filtered.length > 0 && searchTerm.length > 0) {
+                    filtered.forEach(p => {
+                        const item = document.createElement('div');
+                        item.className = 'suggestion-item flex items-center justify-between';
+                        item.innerHTML = `
+                            <div>
+                                <p class="font-semibold text-sm">${p.name}</p>
+                                <p class="text-xs text-text-muted">${p.shortDescription.substring(0, 50)}...</p>
+                            </div>
+                            <div class="flex-shrink-0 flex gap-2">
+                                <button data-id="${p.id}" class="view-details-btn btn-click-effect text-xs text-white font-semibold py-1 px-2 rounded bg-gray-600">Ver</button>
+                                <button data-id="${p.id}" class="add-to-quotation-btn btn-click-effect text-xs text-white font-semibold py-1 px-2 rounded" style="background-color: var(--color-primary-action);">Cotar</button>
+                            </div>
+                        `;
+                        productSearchSuggestions.appendChild(item);
+                    });
+                    productSearchSuggestions.classList.remove('hidden');
+                } else {
+                    productSearchSuggestions.classList.add('hidden');
+                }
+            };
+
+            productSearchInput.addEventListener('input', () => populateSearchSuggestions(productSearchInput.value));
+            productSearchInput.addEventListener('blur', () => setTimeout(() => productSearchSuggestions.classList.add('hidden'), 200));
+
+            // Forms
+            DOMElements.quotation.form.addEventListener('submit', handleQuotationSubmit);
+            
+            DOMElements.contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(DOMElements.contactForm);
+                let msg = `Olá, Fortifica!\n\n*Contato via Site*\n`;
+                msg += `*Nome:* ${formData.get('name')}\n`;
+                msg += `*Email:* ${formData.get('email')}\n`;
+                msg += `*Telefone:* ${formData.get('phone')}\n`;
+                msg += `*Mensagem:*\n${formData.get('message')}`;
+                
+                const url = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(msg)}`;
+                window.open(url, '_blank');
+                DOMElements.contactForm.reset();
+                showToast("Redirecionando para o WhatsApp!");
+            });
+            
+            // Adicionado botão "Voltar" para categorias
+            if(DOMElements.backToCategoriesBtn) {
+                DOMElements.backToCategoriesBtn.addEventListener('click', backToCategories);
+            }
+        }
+        
+        function init() {
+            DOMElements.currentYearSpan.textContent = new Date().getFullYear();
+            // REMOVIDO: Renderização direta dos produtos na inicialização
+            // renderProductsGrid(PRODUCTS_DB);
+            
+            // ADICIONADO: Renderização das Categorias
+            renderCategories();
+            
+            // Footer Links Generation
+            const categories = { Parafusos: 'parafuso', Barras: 'barra', Porcas: 'porca', Arruelas: 'arruela' };
+            DOMElements.footerProductList.innerHTML = Object.entries(categories)
+                .map(([name, type]) => `<li><a href="#produtos" data-category="${type}" class="nav-link text-gray-400 hover:text-white transition-colors">${name}</a></li>`)
+                .join('');
+
+            initCarousel();
+            setupEventListeners();
+            setupScrollAnimations();
+            updateQuotationItemCount();
+            
+            // Initial view
+            showMainContentAndScroll('inicio-carousel');
+        }
+
+        // Start Application
+        init();
+    });
+    </script>
+</body>
+</html>
