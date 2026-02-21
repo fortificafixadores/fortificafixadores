@@ -99,7 +99,6 @@
             transform: translateY(-5px);
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
-        /* ALTERADO: Estilos para a imagem da categoria em vez do ícone */
         .category-image-container {
             height: 160px;
             width: 100%;
@@ -110,12 +109,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0.5rem; /* Adicionado padding para evitar que toque nas bordas */
+            padding: 0.5rem;
         }
         .category-image {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* ALTERADO: de cover para contain para mostrar a imagem inteira */
+            object-fit: contain;
             transition: transform 0.5s ease;
         }
         .category-card:hover .category-image {
@@ -336,7 +335,7 @@
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             max-height: 200px; /* Increased height */
             overflow-y: auto;
-            z-index: 900; /* FIXED: Lower z-index to stay behind modal (1000) */
+            z-index: 900;
             width: 100%;
             left: 0;
             top: calc(100% + 4px);
@@ -385,55 +384,55 @@
             transition: transform 0.1s ease;
         }
         
-        /* PDF Preview Styles */
+        /* PDF Preview Styles - PROFESSIONAL OVERHAUL */
+        #pvo-content {
+            font-family: 'Inter', sans-serif;
+            color: #111827; /* Dark text for printing */
+        }
         .pvo-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
         }
         .pvo-logo {
-            height: 60px;
+            height: 65px;
             width: auto;
         }
         .pvo-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--color-text-dark);
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--color-primary-action);
+            letter-spacing: 0.05em;
         }
         
-        /* IMPROVEMENT: Button hover styles using classes */
+        /* Table Styles for PDF */
+        #pvo-items-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        #pvo-items-table th {
+            background-color: var(--color-primary-action);
+            color: white;
+            border: 1px solid #ccc;
+            padding: 8px;
+            font-weight: 600;
+        }
+        #pvo-items-table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+        /* Zebra striping done via JS to ensure rendering */
+
+        /* PDF Quebra de página segura */
+        table { page-break-inside: auto; }
+        tr { page-break-inside: avoid; page-break-after: auto; }
+        thead { display: table-header-group; }
+        tfoot { display: table-footer-group; }
+
         .btn-secondary-outline:hover {
             background-color: var(--color-secondary-action);
             color: var(--color-white);
         }
-
-        /* PDF Styles specific */
-        .pdf-footer-line {
-            border-bottom: 1px solid #ccc;
-            height: 1.5rem;
-            width: 100%;
-            display: inline-block;
-        }
-
-        /* CORREÇÃO: Ajuste de quebra de página para tabelas no PDF */
-        /* Permite que a tabela quebre entre páginas */
-        table {
-            page-break-inside: auto;
-        }
-        /* Evita que uma linha específica da tabela seja cortada ao meio, mas permite quebras entre linhas */
-        tr {
-            page-break-inside: avoid;
-            page-break-after: auto;
-        }
-        /* Garante que o cabeçalho da tabela se repita ou pelo menos não quebre de forma estranha (opcional, dependendo do renderizador) */
-        thead {
-            display: table-header-group;
-        }
-        /* Rodapé da tabela se houver */
-        tfoot {
-            display: table-footer-group;
-        }
-
     </style>
 </head>
 <body class="text-dark">
@@ -442,7 +441,6 @@
     <header class="glass shadow-md fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <a href="#inicio-carousel" id="logo-link" class="flex items-center">
-                <!-- LOGO LOCAL ATUALIZADA -->
                 <img src="imagens/logo.png" alt="Fortifica Fixadores Logo" class="header-logo" onerror="this.src='https://placehold.co/200x50/FFFFFF/A7A9AC?text=Logo'; this.onerror=null;">
             </a>
             <nav class="hidden md:flex space-x-2 items-center">
@@ -481,7 +479,6 @@
         
         <div id="main-content-container">
             <section id="inicio-carousel" class="page-section carousel-container">
-                <!-- BANNER 1 - AGORA LOCAL -->
                 <div class="carousel-slide active" style="background-image: url('imagens/banner-home-1.jpg');">
                     <div class="carousel-caption">
                         <h2 class="fade-in-up">SOLUÇÕES EM FIXADORES</h2>
@@ -492,7 +489,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- BANNER 2 - AGORA LOCAL -->
                 <div class="carousel-slide" style="background-image: url('imagens/banner-home-2.jpg');">
                     <div class="carousel-caption">
                         <h2 class="fade-in-up">Conheça Nossas Linhas</h2>
@@ -520,19 +516,29 @@
                         </p>
                     </div>
                     
-                    <!-- NOVO: Container de Categorias -->
                     <div id="categories-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                         <!-- Categories will be injected here via JS -->
                     </div>
 
-                    <!-- ALTERADO: Container da lista de produtos agora começa oculto e tem um botão de voltar -->
                     <div id="products-list-container" class="hidden">
-                        <div class="mb-6 flex items-center">
-                            <button id="back-to-categories-btn" class="flex items-center text-primary-action font-semibold hover:underline">
-                                <i class="fas fa-arrow-left mr-2"></i> Voltar para Categorias
-                            </button>
-                            <h3 id="current-category-title" class="ml-4 text-2xl font-bold text-gray-800"></h3>
+                        <!-- ALTERADO: Cabeçalho da categoria atualizado para incluir barra de pesquisa -->
+                        <div class="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-300 pb-4">
+                            <div class="flex items-center">
+                                <button id="back-to-categories-btn" class="flex items-center text-primary-action font-semibold hover:underline transition-colors">
+                                    <i class="fas fa-arrow-left mr-2"></i> Voltar
+                                </button>
+                                <h3 id="current-category-title" class="ml-6 text-2xl font-bold text-gray-800 border-l-2 border-primary-action pl-4"></h3>
+                            </div>
+                            
+                            <!-- NOVO: Barra de pesquisa de produtos dentro da categoria -->
+                            <div class="relative w-full md:w-80">
+                                <input type="text" id="category-search-input" class="w-full py-2 pl-10 pr-4 border border-gray-300 rounded-full shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-action/50 focus:border-primary-action text-sm transition-all" placeholder="Buscar nesta categoria...">
+                                <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                    <i class="fas fa-search text-gray-400"></i>
+                                </div>
+                            </div>
                         </div>
+
                         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                             <!-- Product cards will be injected here by JavaScript -->
                         </div>
@@ -741,107 +747,117 @@
                         </div>
                     </div>
 
-                    <!-- REMOVED BORDER CLASS BELOW AS REQUESTED -->
-                    <div id="pvo-content" class="p-6 md:p-8 rounded-lg bg-white max-w-4xl mx-auto">
-                        <!-- ALTERADO: Layout do cabeçalho ajustado para mover Vendedor para a esquerda -->
-                        <div class="pvo-header border-b pb-4 mb-6 items-end">
+                    <!-- ORÇAMENTO PDF - DESIGN PROFISSIONAL -->
+                    <div id="pvo-content" class="p-8 bg-white max-w-4xl mx-auto shadow-2xl relative">
+                        
+                        <!-- Cabeçalho Institucional -->
+                        <div class="pvo-header border-b-2 border-gray-300 pb-4 mb-6">
                             <div class="flex flex-col justify-between h-full">
-                                <!-- LOGO LOCAL ATUALIZADA TAMBÉM NO PDF -->
-                                <img src="imagens/logo.png" alt="Fortifica Fixadores Logo" class="pvo-logo mb-6" onerror="this.src='https://placehold.co/220x60/FFFFFF/A7A9AC?text=Logo'; this.onerror=null;">
-                                <p class="text-sm">Vendedor:</p>
+                                <img src="imagens/logo.png" alt="Fortifica Fixadores Logo" class="pvo-logo mb-2" onerror="this.src='https://placehold.co/220x60/FFFFFF/A7A9AC?text=Logo'; this.onerror=null;">
+                                <div class="text-xs text-gray-500 mt-1">
+                                    <p>CNPJ: 00.000.000/0000-00</p>
+                                    <p>(11) 98844-9534 | fortificafixadores@hotmail.com</p>
+                                </div>
                             </div>
                             <div class="text-right">
-                                <h1 class="pvo-title">Solicitação de Orçamento</h1>
-                                <p class="text-sm mt-1">Data: <span id="pvo-date"></span></p>
+                                <h1 class="pvo-title uppercase tracking-widest text-2xl" style="color: var(--color-primary-action);">Orçamento</h1>
+                                <p class="text-sm font-semibold mt-2">Data: <span id="pvo-date" class="font-normal"></span></p>
+                                <p class="text-sm font-semibold mt-1">Vendedor: <span class="font-normal text-gray-400">___________________</span></p>
                             </div>
                         </div>
 
-                        <div class="pvo-section mb-6">
-                            <h2 class="text-lg font-semibold mb-3 border-b pb-2">Dados do Solicitante</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-text-body">
-                                <p><strong>Nome:</strong> <span id="pvo-client-name"></span></p>
-                                <p><strong>Empresa:</strong> <span id="pvo-client-company"></span></p>
-                                <p><strong>CNPJ:</strong> <span id="pvo-client-cnpj"></span></p>
-                                <p><strong>E-mail:</strong> <span id="pvo-client-email"></span></p>
-                                <p><strong>Telefone:</strong> <span id="pvo-client-phone"></span></p>
-                                <p><strong>Endereço:</strong> <span id="pvo-client-address"></span></p>
+                        <!-- Dados do Cliente -->
+                        <div class="pvo-section mb-8 bg-gray-50 p-4 border border-gray-200 rounded-md">
+                            <h2 class="text-sm font-bold uppercase mb-3 text-gray-700 border-b border-gray-200 pb-1">Dados do Cliente</h2>
+                            <div class="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-gray-800">
+                                <p><span class="font-semibold">Nome:</span> <span id="pvo-client-name"></span></p>
+                                <p><span class="font-semibold">Empresa:</span> <span id="pvo-client-company"></span></p>
+                                <p><span class="font-semibold">CNPJ:</span> <span id="pvo-client-cnpj"></span></p>
+                                <p><span class="font-semibold">E-mail:</span> <span id="pvo-client-email"></span></p>
+                                <p><span class="font-semibold">Telefone:</span> <span id="pvo-client-phone"></span></p>
+                                <p><span class="font-semibold">Endereço:</span> <span id="pvo-client-address"></span></p>
                             </div>
                         </div>
 
-                        <h2 class="text-lg font-semibold mb-3 border-b pb-2">Itens Solicitados</h2>
-                        <div class="overflow-x-auto mb-6">
+                        <!-- Tabela de Itens -->
+                        <div class="mb-8">
                             <table id="pvo-items-table" class="w-full text-sm">
-                                <thead class="bg-gray-50">
-                                    <tr>
-                                        <!-- ALTERADO: Largura reduzida para Código e padding ajustado -->
-                                        <th class="px-2 py-2 text-left font-medium text-gray-600 w-20">Código</th>
-                                        <th class="px-2 py-2 text-left font-medium text-gray-600">Descrição</th>
-                                        <th class="px-2 py-2 text-left font-medium text-gray-600">Diâm.</th>
-                                        <th class="px-2 py-2 text-left font-medium text-gray-600">Comp.</th>
-                                        <th class="px-2 py-2 text-left font-medium text-gray-600">Acab.</th>
-                                        <th class="px-2 py-2 text-right font-medium text-gray-600">Qtd.</th>
-                                        <!-- NOVAS COLUNAS -->
-                                        <th class="px-2 py-2 text-right font-medium text-gray-600 w-24">Vlr. Unit.</th>
-                                        <th class="px-2 py-2 text-right font-medium text-gray-600 w-24">Vlr. Total</th>
+                                <thead>
+                                    <!-- Inline style used to guarantee color rendering in PDF -->
+                                    <tr style="background-color: #2A64A7; color: white;">
+                                        <th class="px-2 py-2 text-left font-semibold border border-gray-300 w-20">Código</th>
+                                        <th class="px-2 py-2 text-left font-semibold border border-gray-300">Descrição</th>
+                                        <th class="px-2 py-2 text-center font-semibold border border-gray-300 w-16">Diâm.</th>
+                                        <th class="px-2 py-2 text-center font-semibold border border-gray-300 w-16">Comp.</th>
+                                        <th class="px-2 py-2 text-center font-semibold border border-gray-300 w-16">Acab.</th>
+                                        <th class="px-2 py-2 text-center font-semibold border border-gray-300 w-12">Qtd.</th>
+                                        <th class="px-2 py-2 text-right font-semibold border border-gray-300 w-24">Vlr. Unit.</th>
+                                        <th class="px-2 py-2 text-right font-semibold border border-gray-300 w-24">Vlr. Total</th>
                                     </tr>
                                 </thead>
-                                <tbody class="bg-white divide-y divide-gray-200"></tbody>
+                                <tbody class="bg-white" id="pvo-tbody">
+                                    <!-- Populated via JS with zebra stripes -->
+                                </tbody>
                             </table>
                         </div>
 
-                        <div id="pvo-observations-section" class="hidden">
-                            <h3 class="text-lg font-semibold mb-2 border-b pb-2">Observações</h3>
-                            <p id="pvo-client-observations" class="p-3 bg-gray-50 rounded-md text-text-body whitespace-pre-wrap"></p>
+                        <div id="pvo-observations-section" class="hidden mb-6">
+                            <h3 class="text-sm font-bold uppercase mb-1 text-gray-700">Observações do Cliente</h3>
+                            <p id="pvo-client-observations" class="p-3 bg-gray-50 border border-gray-200 rounded-md text-sm text-gray-800 whitespace-pre-wrap"></p>
                         </div>
 
-                        <!-- NEW FOOTER FOR MANUAL FILLING -->
-                        <div class="mt-8 border-t pt-4 text-sm text-gray-800">
-                            <div class="flex justify-end">
-                                <!-- ALTERADO: Largura reduzida de w-1/2 para w-5/12 para mover mais à direita -->
-                                <div class="w-5/12 space-y-2 text-right">
-                                    <!-- ALTERADO: Removidas as classes border-b para tirar as linhas -->
-                                    <div class="flex justify-between items-end pb-1">
-                                        <span>Total de Produtos:</span>
-                                        <span class="w-32"></span>
+                        <!-- Rodapé do PDF (Para preenchimento manual) -->
+                        <div class="mt-8 pt-4">
+                            <!-- Bloco de Totais à direita -->
+                            <div class="flex justify-end mb-8">
+                                <div class="w-1/2 md:w-5/12 bg-gray-50 p-4 border border-gray-200 rounded-md space-y-3 text-sm">
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-semibold text-gray-700">Total de Produtos:</span>
+                                        <span class="w-24 text-right">R$ ________</span>
                                     </div>
-                                    <div class="flex justify-between items-end pb-1">
-                                        <span>Total de IPI:</span>
-                                        <span class="w-32"></span>
+                                    <div class="flex justify-between items-center">
+                                        <span class="font-semibold text-gray-700">Total de IPI:</span>
+                                        <span class="w-24 text-right">R$ ________</span>
                                     </div>
-                                    <div class="flex justify-between items-end font-bold text-lg pt-1">
-                                        <span>Total do Pedido:</span>
-                                        <span class="w-32"></span>
+                                    <div class="flex justify-between items-center pt-2 border-t border-gray-300">
+                                        <span class="font-bold text-lg text-gray-900">Total do Pedido:</span>
+                                        <span class="w-24 text-right font-bold text-lg">R$ ________</span>
                                     </div>
                                 </div>
                             </div>
                             
-                            <!-- ALTERADO: Layout vertical à esquerda sem linhas e espaçamento específico -->
-                            <div class="mt-8 flex flex-col text-left max-w-md">
-                               <div class="mb-3">
-                                   <span class="font-bold">Dt. Entrega:</span>
+                            <!-- Condições à esquerda -->
+                            <div class="flex flex-col text-sm text-gray-800 space-y-4 max-w-md">
+                               <div>
+                                   <span class="font-bold inline-block w-36">Dt. Entrega:</span>
+                                   <span class="text-gray-400">__________________________________</span>
                                </div>
-                               <div class="mb-3">
-                                   <span class="font-bold">Cond. Pagto:</span>
+                               <div>
+                                   <span class="font-bold inline-block w-36">Cond. Pagto:</span>
+                                   <span class="text-gray-400">__________________________________</span>
                                </div>
-                               <!-- Margem inferior aumentada (mb-10) para dar o espaço maior solicitado -->
-                               <div class="mb-10">
-                                   <span class="font-bold">Tipo de Frete:</span>
+                               <div>
+                                   <span class="font-bold inline-block w-36">Tipo de Frete:</span>
+                                   <span class="text-gray-400">__________________________________</span>
                                </div>
-                               <div class="mb-3">
-                                   <span class="font-bold">Validade da Proposta:</span>
+                               <div class="pt-2">
+                                   <span class="font-bold inline-block w-36">Validade da Proposta:</span>
+                                   <span class="text-gray-400">__________________________________</span>
                                </div>
-                               <div class="pt-4">
-                                   <span class="font-bold">Obs Pedido:</span>
+                               <div class="pt-4 flex">
+                                   <span class="font-bold inline-block w-36">Obs Interna:</span>
+                                   <div class="flex-grow border-b border-gray-300 mt-4"></div>
                                </div>
                             </div>
                             
-                            <div class="mt-16 flex justify-between items-end">
-                                <div class="w-1/3">
-                                    <p>Recebido em: ____/____/______</p>
+                            <!-- Assinaturas -->
+                            <div class="mt-16 flex justify-between items-end text-sm text-gray-800">
+                                <div>
+                                    <p>Recebido em: ____ / ____ / ______</p>
                                 </div>
-                                <div class="w-1/3 text-center">
-                                    <div class="border-t border-black w-full"></div>
-                                    <p class="text-xs mt-1 font-semibold">Nomes, Carimbo, Assinatura</p>
+                                <div class="text-center w-64">
+                                    <div class="border-t border-gray-800 w-full mb-1"></div>
+                                    <p class="font-semibold">Assinatura / Carimbo</p>
                                 </div>
                             </div>
                         </div>
@@ -1399,6 +1415,7 @@
             backToCategoriesBtn: document.getElementById('back-to-categories-btn'),
             currentCategoryTitle: document.getElementById('current-category-title'),
             productGrid: document.getElementById('product-grid'),
+            categorySearchInput: document.getElementById('category-search-input'), // Cache da nova pesquisa
 
             mobileMenuButton: document.getElementById('mobile-menu-button'),
             mobileMenu: document.getElementById('mobile-menu'),
@@ -1443,7 +1460,7 @@
                 clientEmail: document.getElementById('pvo-client-email'),
                 clientPhone: document.getElementById('pvo-client-phone'),
                 clientAddress: document.getElementById('pvo-client-address'),
-                itemsTableBody: document.querySelector('#pvo-items-table tbody'),
+                itemsTableBody: document.getElementById('pvo-tbody'),
                 observationsSection: document.getElementById('pvo-observations-section'),
                 clientObservations: document.getElementById('pvo-client-observations'),
                 visualizarPdfBtn: document.getElementById('pvo-visualizar-pdf-btn'),
@@ -1635,8 +1652,6 @@
 
         // NOVO: Função para criar o card de categoria
         function createCategoryCardHTML(category, index) {
-            // ALTERADO: Mapeamento de imagens representativas para cada categoria
-            // Usando imagens de produtos existentes como capa da categoria
             const categoryImages = {
                 'parafuso': 'imagens/parafuso-a325-rp.jpg', 
                 'barra': 'imagens/barra-b7.jpg', 
@@ -1651,7 +1666,6 @@
                 'arruela': 'Arruelas'
             };
             
-            // Fallback para placeholder se a imagem não carregar
             const fallbackImage = `https://placehold.co/300x200/FFFFFF/A7A9AC?text=${labels[category]}`;
 
             return `
@@ -1686,6 +1700,11 @@
         function selectCategory(category) {
             appState.selectedCategory = category;
             
+            // Limpa a barra de pesquisa
+            if(DOMElements.categorySearchInput) {
+                DOMElements.categorySearchInput.value = '';
+            }
+
             // Esconde categorias, mostra lista de produtos
             DOMElements.categoriesContainer.classList.add('hidden');
             DOMElements.productsListContainer.classList.remove('hidden');
@@ -1856,18 +1875,21 @@
             pvo.clientAddress.textContent = clientData.address || 'N/A';
 
             pvo.itemsTableBody.innerHTML = '';
-            appState.quotationList.forEach(item => {
+            appState.quotationList.forEach((item, index) => {
                 const row = pvo.itemsTableBody.insertRow();
-                // ALTERADO: Removida a classe 'border-b border-gray-100' das últimas duas células
+                // Zebra styling for PDF rows
+                const bgClass = index % 2 === 0 ? 'bg-white' : 'bg-gray-100';
+                row.className = bgClass;
+
                 row.innerHTML = `
-                    <td class="px-2 py-2 text-xs">${item.productCode}</td>
-                    <td class="px-2 py-2">${item.productName}</td>
-                    <td class="px-2 py-2">${item.diameter}</td>
-                    <td class="px-2 py-2">${item.length}</td>
-                    <td class="px-2 py-2">${item.finish}</td>
-                    <td class="px-2 py-2 text-right font-bold">${item.quantity}</td>
-                    <td class="px-2 py-2"></td> <!-- Sem linha -->
-                    <td class="px-2 py-2"></td> <!-- Sem linha -->
+                    <td class="px-2 py-2 text-xs border border-gray-300 text-center">${item.productCode}</td>
+                    <td class="px-2 py-2 text-sm border border-gray-300">${item.productName}</td>
+                    <td class="px-2 py-2 text-sm border border-gray-300 text-center">${item.diameter}</td>
+                    <td class="px-2 py-2 text-sm border border-gray-300 text-center">${item.length}</td>
+                    <td class="px-2 py-2 text-sm border border-gray-300 text-center">${item.finish}</td>
+                    <td class="px-2 py-2 text-sm border border-gray-300 text-center font-bold">${item.quantity}</td>
+                    <td class="px-2 py-2 border border-gray-300"></td> 
+                    <td class="px-2 py-2 border border-gray-300"></td> 
                 `;
             });
 
@@ -2079,10 +2101,9 @@
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2, useCORS: true, letterRendering: true },
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-                // ALTERADO: Configuração de quebra de página ajustada para evitar grandes espaços em branco
                 pagebreak: { mode: ['css', 'legacy'] } 
             };
-            // ALTERADO: Abre o PDF em uma nova aba para visualização em vez de baixar
+            
             html2pdf().from(content).set(opt).output('dataurlnewwindow');
         }
 
@@ -2239,10 +2260,9 @@
             document.getElementById('add-to-quotation-btn').addEventListener('click', () => handleAddToQuotation(true));
             document.getElementById('add-and-continue-btn').addEventListener('click', () => handleAddToQuotation(false));
             
-            // Search Input Logic
+            // Search Input Logic (Modal de Cotação)
             const { productSearchInput, productSearchSuggestions } = DOMElements.quotation;
             
-            // CORREÇÃO: Previne que o input perca o foco (blur) ao clicar na lista de sugestões
             productSearchSuggestions.addEventListener('mousedown', (e) => {
                 e.preventDefault();
             });
@@ -2295,16 +2315,26 @@
                 showToast("Redirecionando para o WhatsApp!");
             });
             
-            // Adicionado botão "Voltar" para categorias
+            // Botão "Voltar" para categorias
             if(DOMElements.backToCategoriesBtn) {
                 DOMElements.backToCategoriesBtn.addEventListener('click', backToCategories);
+            }
+
+            // NOVO: Filtro de pesquisa dentro da categoria
+            if(DOMElements.categorySearchInput) {
+                DOMElements.categorySearchInput.addEventListener('input', (e) => {
+                    const searchTerm = e.target.value.toLowerCase();
+                    const filtered = PRODUCTS_DB.filter(p => 
+                        p.productType === appState.selectedCategory && 
+                        p.name.toLowerCase().includes(searchTerm)
+                    );
+                    renderProductsGrid(filtered);
+                });
             }
         }
         
         function init() {
             DOMElements.currentYearSpan.textContent = new Date().getFullYear();
-            // REMOVIDO: Renderização direta dos produtos na inicialização
-            // renderProductsGrid(PRODUCTS_DB);
             
             // ADICIONADO: Renderização das Categorias
             renderCategories();
